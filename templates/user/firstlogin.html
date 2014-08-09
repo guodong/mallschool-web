@@ -1,22 +1,5 @@
 {!extends file='layout.html'!}
 {!block name=main!}
-<script type="text/javascript">
-$(function(){
-	var fm = $("#userinfoform");
-	fm.find("[type=button]").click(function(){
-		alert("hello");
-		data = {"name" : "深蓝",
-				"id" : "帐号是多少"
-				}
-		var name = $("#name");
-		name.val(data.name);
-		var id = $("#id");
-		id.val(data.id);
-	})
-})
-
-</script>
-
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 userinfobox">
 		<div id="userinfo">
@@ -25,22 +8,22 @@ $(function(){
 		</div>
 	</div>
 </div>
-
+<div class="row">
+	<div class="col-md-8 col-md-offset-2" style="margin-top:20px;margin-bottom:-70px;">
+		<label>这是你第一次登陆网站，补全下述信息有利于您快速发布交易信息</label>
+	</div>
+</div>
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="row">
 			<form role="form" id="userinfoform" >
 				<div class="form-group userinfobox" style="padding-top: 10px">
-
 			   		<div class="row">
 				   		<div class="col-md-2">
 				   			<label for="inputPassword" class="control-label title">昵称</label>
 				   		</div>
 				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">昵称</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				      		<input type="text" class="form-control" placeholder="昵称是在交易或者社交过程中，别人看到的称呼">
 				   		</div>
 				   		<div class="col-md-10 col-md-offset-1" 
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -48,27 +31,10 @@ $(function(){
 			   		
 			   		<div class="row">
 				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">帐号</label>
+				   			<label for="inputPassword" class="control-label title">学校</label>
 				   		</div>
 				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">帐号</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
-				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
-							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
-			   		</div>
-			   		
-			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">院校</label>
-				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">院校</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				      		<input type="text" class="form-control" placeholder="选择你的学校，让更多校友找到你">
 				   		</div>
 				   		<div class="col-md-10 col-md-offset-1" 
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -79,24 +45,18 @@ $(function(){
 				   			<label for="inputPassword" class="control-label title">QQ</label>
 				   		</div>
 				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">QQ</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				      		<input type="text" class="form-control" placeholder="可以选择QQ作为交易过程的指定联系方式">
 				   		</div>
 				   		<div class="col-md-10 col-md-offset-1" 
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
-			   		
-			   		<div class="row">
+	
+					<div class="row">
 				   		<div class="col-md-2">
 				   			<label for="inputPassword" class="control-label title">微信</label>
 				   		</div>
 				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">微信</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				      		<input type="text" class="form-control" placeholder="可以选择微信作为交易过程的指定联系方式">
 				   		</div>
 				   		<div class="col-md-10 col-md-offset-1" 
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -107,38 +67,18 @@ $(function(){
 				   			<label for="inputPassword" class="control-label title">手机号</label>
 				   		</div>
 				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">手机号</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				      		<input type="text" class="form-control" placeholder="可以选择手机作为交易过程的指定联系方式">
 				   		</div>
 				   		<div class="col-md-10 col-md-offset-1" 
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
-			   		
+
 			   		<div class="row">
 				   		<div class="col-md-2">
 				   			<label for="inputPassword" class="control-label title">邮箱</label>
 				   		</div>
 				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">邮箱</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
-				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
-							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
-			   		</div>
-			   		
-					<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">交易地</label>
-				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">交易地</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				      		<input type="text" class="form-control" placeholder="可以选择邮箱作为交易过程的指定联系方式">
 				   		</div>
 				   		<div class="col-md-10 col-md-offset-1" 
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -146,16 +86,30 @@ $(function(){
 			   		
 			   		<div class="row">
 				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">联系方式</label>
+				   			<label for="inputPassword" class="control-label title">交易地点</label>
 				   		</div>
 				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">联系方式</label>
-				   		</div>
-				   		<div class="col-md-2 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				      		<input type="text" class="form-control" placeholder="默认的交易地点，发布交易信息时可以切换">
 				   		</div>
 				   		<div class="col-md-10 col-md-offset-1" 
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">首选联系方式</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<input type="text" class="form-control" placeholder="默认的联系方式，发布交易信息时可以切换">
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+			   			<div class="col-md-4 col-md-offset-4" >
+			   				<button type="button" class="btn btn-info"  style="width:200px;margin-top:10px">确认提交</button>
+			   			</div>
 			   		</div>
 				</div>
 			</form>

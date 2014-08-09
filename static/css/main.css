@@ -88,7 +88,7 @@ a:hover{
 	font-size:14px;
 	padding-top:6px;
 	text-align:right;
-	margin:5px 0;
+	margin:16px 0;
 	font-family:Microsoft YaHei ;
 }
 
@@ -98,13 +98,13 @@ a:hover{
 #userinfoform .control-label{
 	font-size:14px;
 	padding-top:6px;
-	margin:5px 0;
+	margin:16px 0;
 	font-family:Microsoft YaHei ;
 }
 
 #userinfoform .form-control {
 	font-size:14px;
-	margin:5px 0;
+	margin:16px 0;
 }
 
 
