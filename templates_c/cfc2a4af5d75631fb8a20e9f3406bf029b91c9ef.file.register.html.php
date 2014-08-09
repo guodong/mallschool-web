@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 13:32:05
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 15:17:53
          compiled from "templates/register.html" */ ?>
 <?php /*%%SmartyHeaderCode:162698434953e5ad6f625609-67936027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cfc2a4af5d75631fb8a20e9f3406bf029b91c9ef' => 
     array (
       0 => 'templates/register.html',
-      1 => 1407562325,
+      1 => 1407568672,
       2 => 'file',
     ),
     'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1407561021,
+      1 => 1407565102,
       2 => 'file',
     ),
   ),
@@ -59,8 +59,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script data-main="js/main"
-	src="http://requirejs.org/docs/release/2.1.14/minified/require.js"></script>
+<script data-main="/static/js/main"
+	src="/static/js/require.js"></script>
 </head>
 <body>
 
@@ -83,31 +83,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
 
-<div class="row"
-	style="margin: 30px;">
+<div class="row" style="margin: 30px;">
 	<div class="col-md-4 col-md-offset-2">
 		<span class="glyphicon glyphicon-envelope"></span> 邮箱注册
 	</div>
 	<div class="col-md-4">
-		<span style="float: right;">已有账号？<a
-			href="login.html" style="color: red">登录》</a></span>
+		<span style="float: right;">已有账号？<a href="login.html"
+			style="color: red">登录》</a></span>
 	</div>
 	<div class="col-md-10 col-md-offset-1"
 		style="height: 1px; margin-top: 10px; background-color: #D5D5D5; overflow: hidden;"></div>
 </div>
 <div class="row"
-	style=" margin-top: 40px; width: 800px; margin-right: auto; margin-left: auto;">
-	<div class="form-horizontal regform" id="form" role="form">
+	style="margin-top: 40px; width: 800px; margin-right: auto; margin-left: auto;">
+	<div class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
 		<div class="form-group">
 			<label for="inputEmail3" class="col-md-2 control-label">邮箱</label>
 			<div class="col-md-4">
-				<input type="email" name="email" class="form-control"
+				<input type="email" name="email" class="form-control" regex="^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"
 					id="inputEmail3" placeholder="Email"> <span
 					class="help-block">使用edu邮箱注册，会得到更多权限</span>
 			</div>
 			<div class="col-md-6">
 				<div class="alert alert-info" role="alert">
-					<img src="/static/images/alart.jpg" class="alartimg" /> &nbsp用于登录和找回密码，不会公开
+					<img src="/static/images/alart.jpg" class="alartimg" />
+					&nbsp用于登录和找回密码，不会公开
 				</div>
 			</div>
 		</div>
@@ -132,7 +132,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 			<div class="col-md-6">
 				<div class="alert alert-info" role="alert">
-					<img src="/static/images/alart.jpg" class="alartimg" /> &nbsp请再次输入确认密码
+					<img src="/static/images/alart.jpg" class="alartimg" />
+					&nbsp请再次输入确认密码
 				</div>
 			</div>
 		</div>
@@ -168,6 +169,38 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 	</div>
 </div>
+<script>
+function serializeObject(form){
+	var o = {};
+	var a = form.serializeArray();
+	$.each(a, function() {
+		if (o[this.name] !== undefined) {
+			if (!o[this.name].push) {
+				o[this.name] = [o[this.name]];
+			}
+			o[this.name].push(this.value || '');
+		} else {
+			o[this.name] = this.value || '';
+		}
+	});
+	return o;
+}
+alert(JSON.stringify(serializeObject($("#regform"))))
+require(['god/Form'], function(Form){
+	var form = new Form({
+		id: 'regform',
+		invalidElementCallback: function(elem) {
+			elem.dom.parents(".form-group").addClass("has-error");
+		},
+		validElementCallback: function(elem){
+			elem.dom.parents(".form-group").removeClass("has-error");
+		},
+		submitCallback: function(d){
+			alert(d);
+		}
+	})
+})
+</script>
 </div>
 	</div>
 </div>

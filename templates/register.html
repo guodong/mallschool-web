@@ -13,11 +13,11 @@
 </div>
 <div class="row"
 	style="margin-top: 40px; width: 800px; margin-right: auto; margin-left: auto;">
-	<div class="form-horizontal regform" id="form" role="form">
+	<div class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
 		<div class="form-group">
 			<label for="inputEmail3" class="col-md-2 control-label">邮箱</label>
 			<div class="col-md-4">
-				<input type="email" name="email" class="form-control"
+				<input type="email" name="email" class="form-control" regex="^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"
 					id="inputEmail3" placeholder="Email"> <span
 					class="help-block">使用edu邮箱注册，会得到更多权限</span>
 			</div>
@@ -86,4 +86,36 @@
 		</div>
 	</div>
 </div>
+<script>
+function serializeObject(form){
+	var o = {};
+	var a = form.serializeArray();
+	$.each(a, function() {
+		if (o[this.name] !== undefined) {
+			if (!o[this.name].push) {
+				o[this.name] = [o[this.name]];
+			}
+			o[this.name].push(this.value || '');
+		} else {
+			o[this.name] = this.value || '';
+		}
+	});
+	return o;
+}
+alert(JSON.stringify(serializeObject($("#regform"))))
+require(['god/Form'], function(Form){
+	var form = new Form({
+		id: 'regform',
+		invalidElementCallback: function(elem) {
+			elem.dom.parents(".form-group").addClass("has-error");
+		},
+		validElementCallback: function(elem){
+			elem.dom.parents(".form-group").removeClass("has-error");
+		},
+		submitCallback: function(d){
+			alert(d);
+		}
+	})
+})
+</script>
 {!/block!}
