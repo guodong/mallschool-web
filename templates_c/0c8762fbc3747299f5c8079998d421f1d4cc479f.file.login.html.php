@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 16:47:33
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 19:31:35
          compiled from "templates/login.html" */ ?>
 <?php /*%%SmartyHeaderCode:160004472753e5de3eb9e054-83899166%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0c8762fbc3747299f5c8079998d421f1d4cc479f' => 
     array (
       0 => 'templates/login.html',
-      1 => 1407574052,
+      1 => 1407577631,
       2 => 'file',
     ),
     'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1407572136,
+      1 => 1407580746,
       2 => 'file',
     ),
   ),
@@ -63,10 +63,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1">
 					<a class="menu-left" href="/"><span
-						class="glyphicon glyphicon-home"></span> 首 页</a> <a class="menu-right"
+						class="glyphicon glyphicon-home"></span> 首 页</a> 
+						<span class="noauth">
+						<a class="menu-right"
 						href="/login"><span class="glyphicon glyphicon-off"></span> 登
 						陆</a> <a class="menu-right" href="/register"><span
 						class="glyphicon glyphicon-pencil"></span> 注 册</a>
+						</span>
+						<span class="auth pull-right" style="position: relative;">
+							<a>昵称 <span class="caret"></span></a>
+							<div class="dpd" style="position: absolute;z-index: 1;width: 120px;right: 0;background: #949204">
+								<a>个人信息</a>
+								<a>我的书籍</a>
+								<a>退出</a>
+							</div>
+						</span>
 				</div>
 			</div>
 		</div>
@@ -123,7 +134,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			validElementCallback : function(elem) {
 				elem.dom.parents(".form-group").removeClass("has-error");
 			},
-			submitCallback : function(d) {
+			submitCallback : function(d) {alert(JSON.stringify(d))
 				var data = d;//jQuery.parseJSON(d);
 				if (d.result == 0) {
 					$.ajax({
@@ -146,5 +157,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 </div>
 
+<script>
+$(function(){
+	
+})
+</script>
 </body>
 </html><?php }} ?>

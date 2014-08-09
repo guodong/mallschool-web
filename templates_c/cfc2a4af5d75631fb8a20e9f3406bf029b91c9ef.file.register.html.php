@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 17:08:19
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 19:31:34
          compiled from "templates/register.html" */ ?>
 <?php /*%%SmartyHeaderCode:162698434953e5ad6f625609-67936027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cfc2a4af5d75631fb8a20e9f3406bf029b91c9ef' => 
     array (
       0 => 'templates/register.html',
-      1 => 1407575004,
+      1 => 1407575874,
       2 => 'file',
     ),
     'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1407572136,
+      1 => 1407580746,
       2 => 'file',
     ),
   ),
@@ -63,10 +63,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1">
 					<a class="menu-left" href="/"><span
-						class="glyphicon glyphicon-home"></span> 首 页</a> <a class="menu-right"
+						class="glyphicon glyphicon-home"></span> 首 页</a> 
+						<span class="noauth">
+						<a class="menu-right"
 						href="/login"><span class="glyphicon glyphicon-off"></span> 登
 						陆</a> <a class="menu-right" href="/register"><span
 						class="glyphicon glyphicon-pencil"></span> 注 册</a>
+						</span>
+						<span class="auth pull-right" style="position: relative;">
+							<a>昵称 <span class="caret"></span></a>
+							<div class="dpd" style="position: absolute;z-index: 1;width: 120px;right: 0;background: #949204">
+								<a>个人信息</a>
+								<a>我的书籍</a>
+								<a>退出</a>
+							</div>
+						</span>
 				</div>
 			</div>
 		</div>
@@ -207,5 +218,10 @@ require(['god/Form'], function(Form){
 	</div>
 </div>
 
+<script>
+$(function(){
+	
+})
+</script>
 </body>
 </html><?php }} ?>

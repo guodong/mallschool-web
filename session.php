@@ -10,6 +10,7 @@ if ($rt->data->id != 0) {
 	$user = comm('http://api.jige.olege.com/user?id='.$_SESSION['uid']);
 	$u = json_decode($user)->data;
 	$_SESSION['user'] = serialize($u);
+	echo $_SESSION['uid'];
 }
 
 function comm($uri, $data = array(), $method = 'post'){
@@ -24,4 +25,4 @@ function comm($uri, $data = array(), $method = 'post'){
     $return = curl_exec ( $ch );
     curl_close ( $ch );
     return $return;
-}
+} 

@@ -45,7 +45,7 @@
 			validElementCallback : function(elem) {
 				elem.dom.parents(".form-group").removeClass("has-error");
 			},
-			submitCallback : function(d) {
+			submitCallback : function(d) {alert(JSON.stringify(d))
 				var data = d;//jQuery.parseJSON(d);
 				if (d.result == 0) {
 					$.ajax({
