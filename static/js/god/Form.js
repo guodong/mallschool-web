@@ -79,14 +79,18 @@ define(['god/form/Element'], function(Element){
 		submit: function(){
 			this.loadingStart();
 			var self = this;
-			if(false === self.onSubmit()) {
-				this.loadingEnd();
-				return;
-			}
+			var result = self.onSubmit();
 			if(!self.isValid()){
 				this.loadingEnd();
-				self.invalidCallback();
+				for(var i in this.invalidElements){
+					self.invalidCallback(this.invalidElements[i]);
+				}
+				
 				return false;
+			}
+			if(false === result) {
+				this.loadingEnd();
+				return;
 			}
 			if(self.isAjax){
 				$.ajax({

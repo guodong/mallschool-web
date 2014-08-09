@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 13:10:34
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 16:30:41
          compiled from "templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:72383480353e595b1ce08e7-62371894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1407561021,
+      1 => 1407572136,
       2 => 'file',
     ),
   ),
@@ -40,21 +40,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	rel="stylesheet">
 <link href="/static/css/main.css" rel="stylesheet">
 
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script data-main="js/main"
-	src="http://requirejs.org/docs/release/2.1.14/minified/require.js"></script>
+<script data-main="/static/js/main"
+	src="/static/js/require.js"></script>
 </head>
 <body>
 

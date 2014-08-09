@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 15:17:53
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 17:08:19
          compiled from "templates/register.html" */ ?>
 <?php /*%%SmartyHeaderCode:162698434953e5ad6f625609-67936027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cfc2a4af5d75631fb8a20e9f3406bf029b91c9ef' => 
     array (
       0 => 'templates/register.html',
-      1 => 1407568672,
+      1 => 1407575004,
       2 => 'file',
     ),
     'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1407565102,
+      1 => 1407572136,
       2 => 'file',
     ),
   ),
@@ -46,18 +46,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	rel="stylesheet">
 <link href="/static/css/main.css" rel="stylesheet">
 
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script data-main="/static/js/main"
 	src="/static/js/require.js"></script>
@@ -88,7 +82,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<span class="glyphicon glyphicon-envelope"></span> 邮箱注册
 	</div>
 	<div class="col-md-4">
-		<span style="float: right;">已有账号？<a href="login.html"
+		<span style="float: right;">已有账号？<a href="login"
 			style="color: red">登录》</a></span>
 	</div>
 	<div class="col-md-10 col-md-offset-1"
@@ -96,12 +90,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 <div class="row"
 	style="margin-top: 40px; width: 800px; margin-right: auto; margin-left: auto;">
-	<div class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
+	<form class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
 		<div class="form-group">
 			<label for="inputEmail3" class="col-md-2 control-label">邮箱</label>
 			<div class="col-md-4">
 				<input type="email" name="email" class="form-control" regex="^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"
-					id="inputEmail3" placeholder="Email"> <span
+					id="regemail" placeholder="Email"> <span
 					class="help-block">使用edu邮箱注册，会得到更多权限</span>
 			</div>
 			<div class="col-md-6">
@@ -114,8 +108,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="form-group">
 			<label for="inputPassword3" class="col-md-2 control-label">密码</label>
 			<div class="col-md-4">
-				<input type="password" name='password' class="form-control"
-					id="inputPassword3" placeholder="password">
+				<input type="password" name='password' class="form-control" regex="^\S{6,}$"
+					id="passwd" placeholder="password">
 			</div>
 			<div class="col-md-6">
 				<div class="alert alert-info" role="alert">
@@ -127,7 +121,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="form-group">
 			<label for="inputPassword4" class="col-md-2 control-label">确认密码</label>
 			<div class="col-md-4">
-				<input type="password" class="form-control" id="inputPassword4"
+				<input type="password" class="form-control" id="repasswd" regex="^\S{6,}$"
 					placeholder="password">
 			</div>
 			<div class="col-md-6">
@@ -137,10 +131,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 		</div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="inputcode" class="col-md-2 control-label">验证码</label>
 			<div class="col-md-2">
-				<input type="text" name="captcha" class="form-control"
+				<input type="text" name="captcha" class="form-control" regex="^\S{4}$"
 					id="inputcode" placeholder="code">
 			</div>
 			<div class="col-md-1">
@@ -156,7 +150,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					&nbsp请输入图片中的字符，不区分大小写
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="form-group" style="text-align: left">
 			<div class="col-md-offset-2 col-md-4">
@@ -167,25 +161,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</p>
 			</div>
 		</div>
-	</div>
+	</form>
 </div>
 <script>
-function serializeObject(form){
-	var o = {};
-	var a = form.serializeArray();
-	$.each(a, function() {
-		if (o[this.name] !== undefined) {
-			if (!o[this.name].push) {
-				o[this.name] = [o[this.name]];
-			}
-			o[this.name].push(this.value || '');
-		} else {
-			o[this.name] = this.value || '';
-		}
-	});
-	return o;
-}
-alert(JSON.stringify(serializeObject($("#regform"))))
 require(['god/Form'], function(Form){
 	var form = new Form({
 		id: 'regform',
@@ -196,7 +174,31 @@ require(['god/Form'], function(Form){
 			elem.dom.parents(".form-group").removeClass("has-error");
 		},
 		submitCallback: function(d){
-			alert(d);
+			var data = d;//jQuery.parseJSON(d);
+			if(d.result == 0){
+				$.ajax({
+					url: '/session.php',
+					type: 'post',
+					data: {
+						email: $("#regemail").val(),
+						password: $("#passwd").val(),
+					},
+					success: function(){
+						location.href = '/user/firstlogin';
+					}
+				});
+			}
+		},
+		onSubmit: function(){
+			if($("#passwd").val() != $("#repasswd").val()){
+				$("#passwd").parents(".form-group").addClass("has-error");
+				$("#repasswd").parents(".form-group").addClass("has-error");
+				return false;
+			}else{
+				$("#passwd").parents(".form-group").removeClass("has-error");
+				$("#repasswd").parents(".form-group").removeClass("has-error");
+				return true;
+			}
 		}
 	})
 })

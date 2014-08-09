@@ -1,27 +1,33 @@
 {!extends file='layout.html'!} {!block name=main!}
-<div class="row" 	style="margin-top: 100px; margin-right: auto; margin-left: auto;">
+<div class="row"
+	style="margin-top: 100px; margin-right: auto; margin-left: auto;">
 	<div class="col-lg-5 col-md-5">
 		<img src="/static/images/banner/banner2.jpg" />
 	</div>
-	<div class="col-lg-5 col-md-5 loginform"  >
-		<div style="margin-left: auto; margin-right: auto; padding-left: 50px;">
-			<div style="padding:10px">
-						<span style="float: left;">帐号登录</span>
-						<span style="float: right; font-size: 12px;">还没有帐号？
-							<a href="register" style="color: red; font-size: 12px;">立刻注册</a>
-						</span>
+	<div class="col-lg-5 col-md-5 loginform">
+		<div
+			style="margin-left: auto; margin-right: auto; padding-left: 50px;">
+			<div style="padding: 10px">
+				<span style="float: left;">帐号登录</span> <span
+					style="float: right; font-size: 12px;">还没有帐号？ <a
+					href="register" style="color: red; font-size: 12px;">立刻注册</a>
+				</span>
 			</div>
-			<form role="form" >
-				<input type="email" class="form-control" id="exampleInputEmail1"
-					placeholder="手机号/邮箱" style="margin-top: 20px"> 
-				<input 	type="password" class="form-control" id="exampleInputPassword1"
+			<form role="form" id="logform" isAjax="true" method="post"
+				action="{!$api_url!}/user/accesstoken">
+				<input type="email" class="form-control" id="logemail" name="email"
+					placeholder="邮箱" style="margin-top: 20px"
+					regex="^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"> <input
+					type="password" class="form-control" id="logpasswd" name="password"
 					placeholder="密码" style="margin-top: 20px;">
 				<div class="checkbox" style="margin-top: 20px;">
-					<label style="float: left"> <input type="checkbox">记住帐号</label> 
-					<label style="float: left;margin-left:10px"> <input type="checkbox">下次自动登录</label> 
-					<a style="font-size: 12px; color: blue; float: right" href="#">忘记密码？</a>
+					<label style="float: left"> <input type="checkbox">记住帐号
+					</label> <label style="float: left; margin-left: 10px"> <input
+						type="checkbox">下次自动登录
+					</label> <a style="font-size: 12px; color: blue; float: right" href="#">忘记密码？</a>
 				</div>
-				<button type="submit" class="btn btn-primary" style="width:100px">登录</button>
+				<button type="submit" class="btn btn-primary" style="width: 100px">登
+					录</button>
 			</form>
 		</div>
 	</div>
@@ -29,4 +35,33 @@
 		<img src="/static/images/banner/banner3.jpg" />
 	</div>
 </div>
+<script>
+	require([ 'god/Form' ], function(Form) {
+		var fm = new Form({
+			id : 'logform',
+			invalidElementCallback : function(elem) {
+				alert("邮箱格式不正确")
+			},
+			validElementCallback : function(elem) {
+				elem.dom.parents(".form-group").removeClass("has-error");
+			},
+			submitCallback : function(d) {
+				var data = d;//jQuery.parseJSON(d);
+				if (d.result == 0) {
+					$.ajax({
+						url : '/session.php',
+						type : 'post',
+						data : {
+							email : $("#logemail").val(),
+							password : $("#logpasswd").val(),
+						},
+						success : function() {
+							location.href = '/';
+						}
+					});
+				}
+			},
+		})
+	})
+</script>
 {!/block!}

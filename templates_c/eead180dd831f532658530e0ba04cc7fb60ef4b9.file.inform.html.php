@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 11:32:33
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 16:33:11
          compiled from "templates/user/inform.html" */ ?>
 <?php /*%%SmartyHeaderCode:45612096153e596188f8031-89061882%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eead180dd831f532658530e0ba04cc7fb60ef4b9' => 
     array (
       0 => 'templates/user/inform.html',
-      1 => 1407555152,
+      1 => 1407569198,
       2 => 'file',
     ),
     'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
     array (
       0 => 'templates/layout.html',
-      1 => 1407132197,
+      1 => 1407561046,
+      2 => 'file',
+    ),
+    'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
+    array (
+      0 => 'templates/base.html',
+      1 => 1407572136,
       2 => 'file',
     ),
   ),
@@ -40,37 +46,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	rel="stylesheet">
 <link href="/static/css/main.css" rel="stylesheet">
 
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+<script data-main="/static/js/main"
+	src="/static/js/require.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row" style="background-color: #6699ff">
-			<img src="/static/images/nav1.jpg" alt="..." class="img-rounded"
-				style="height: 40px; margin-left: 40px; float: left" /> <a
-				href="register.html" target="_top"><img src="/static/images/nav3.jpg"
-				alt="..." class="img-rounded"
-				style="height: 40px; margin-right: 40px; float: right" /></a> <a
-				href="index-2.html" target="_top"><img src="/static/images/nav2.jpg"
-				alt="..." class="img-rounded"
-				style="height: 40px; margin-right: 10px; float: right" /></a>
+
+	<div class="top">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					<a class="menu-left" href="/"><span
+						class="glyphicon glyphicon-home"></span> 首 页</a> <a class="menu-right"
+						href="/login"><span class="glyphicon glyphicon-off"></span> 登
+						陆</a> <a class="menu-right" href="/register"><span
+						class="glyphicon glyphicon-pencil"></span> 注 册</a>
+				</div>
+			</div>
 		</div>
-		
+	</div>
+	
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
 <script type="text/javascript">
 $(function(){
-	var fm = $("#form");
+	var fm = $("#userinfoform");
 	fm.find("[type=button]").click(function(){
 		alert("hello");
 		data = {"name" : "深蓝",
@@ -85,81 +93,162 @@ $(function(){
 
 </script>
 
-
-
-<div id="userinfo">
-	<a href="user/index.php">
-	<img alt="头像" src="/static/images/head.jpg" width="100px">
-	</a>
-	往事深处少年兰
-</div>
-
-<form role="form" id="form">
-	<div class="form-group">
-      	<label for="inputPassword" class="col-sm-2 control-label">昵称</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="name">
-   		</div>
-   		
-   		<label for="inputPassword" class="col-sm-2 control-label">帐号</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="id" 
-         placeholder="往事">
-   		</div>
-   		
-   		<label for="inputPassword" class="col-sm-2 control-label">院校</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="inputPassword" 
-         placeholder="往事">
-   		</div>
-   		
-   		<label for="inputPassword" class="col-sm-2 control-label">qq</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="inputPassword" 
-         placeholder="往事">
-   		</div>
-   		
-   		<label for="inputPassword" class="col-sm-2 control-label">威信</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="inputPassword" 
-         placeholder="往事">
-   		</div>
-   		 
-   		<label for="inputPassword" class="col-sm-2 control-label">手机号</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="inputPassword" 
-         placeholder="往事">
-   		</div>
-   		 
-   		<label for="inputPassword" class="col-sm-2 control-label">邮箱</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="inputPassword" 
-         placeholder="往事">
-   		</div>
-   		
-   		<label for="inputPassword" class="col-sm-2 control-label">交易地</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="inputPassword" 
-         placeholder="往事">
-   		</div>
-   		
-   		<label for="inputPassword" class="col-sm-2 control-label">联系方式</label>
-    	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="lastlable" 
-         placeholder="往事">
-   		</div>
-   		
-   		<div id="button">
-			<button type="button" class="btn btn-primary btn-lg">取消</button>
-			<button type="submit" class="btn btn-primary btn-lg">保存</button>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 userinfobox">
+		<div id="userinfo">
+			<img alt="头像" src="/static/images/head.jpg" width="100px">
+			<span style="font-family:Microsoft YaHei ;margin-left:20px;">往事深处少年蓝</span>	
 		</div>
 	</div>
-</form>.
+</div>
 
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="row">
+			<form role="form" id="userinfoform" >
+				<div class="form-group userinfobox" style="padding-top: 10px">
 
-
-
-
+			   		
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">昵称</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">昵称</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">帐号</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">帐号</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">院校</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">院校</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">QQ</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">QQ</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">微信</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">微信</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">手机号</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">手机号</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">邮箱</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">邮箱</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+					<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">交易地</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">交易地</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+			   		
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">联系方式</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<label for="inputPassword" class="control-label"  id="name">联系方式</label>
+				   		</div>
+				   		<div class="col-md-2 userinfoedit">
+				   			<a><span class="glyphicon glyphicon-edit"></span>編輯</a>
+				   		</div>
+				   		<div class="col-md-10 col-md-offset-1" 
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			   		</div>
+				</div>
+			</form>
+		</div>
 	</div>
+</div>
+
+
+
+
+
+
+</div>
+	</div>
+</div>
+
 </body>
 </html><?php }} ?>

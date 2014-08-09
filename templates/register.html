@@ -13,12 +13,12 @@
 </div>
 <div class="row"
 	style="margin-top: 40px; width: 800px; margin-right: auto; margin-left: auto;">
-	<div class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
+	<form class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
 		<div class="form-group">
 			<label for="inputEmail3" class="col-md-2 control-label">邮箱</label>
 			<div class="col-md-4">
 				<input type="email" name="email" class="form-control" regex="^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"
-					id="inputEmail3" placeholder="Email"> <span
+					id="regemail" placeholder="Email"> <span
 					class="help-block">使用edu邮箱注册，会得到更多权限</span>
 			</div>
 			<div class="col-md-6">
@@ -31,8 +31,8 @@
 		<div class="form-group">
 			<label for="inputPassword3" class="col-md-2 control-label">密码</label>
 			<div class="col-md-4">
-				<input type="password" name='password' class="form-control"
-					id="inputPassword3" placeholder="password">
+				<input type="password" name='password' class="form-control" regex="^\S{6,}$"
+					id="passwd" placeholder="password">
 			</div>
 			<div class="col-md-6">
 				<div class="alert alert-info" role="alert">
@@ -44,7 +44,7 @@
 		<div class="form-group">
 			<label for="inputPassword4" class="col-md-2 control-label">确认密码</label>
 			<div class="col-md-4">
-				<input type="password" class="form-control" id="inputPassword4"
+				<input type="password" class="form-control" id="repasswd" regex="^\S{6,}$"
 					placeholder="password">
 			</div>
 			<div class="col-md-6">
@@ -54,10 +54,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="inputcode" class="col-md-2 control-label">验证码</label>
 			<div class="col-md-2">
-				<input type="text" name="captcha" class="form-control"
+				<input type="text" name="captcha" class="form-control" regex="^\S{4}$"
 					id="inputcode" placeholder="code">
 			</div>
 			<div class="col-md-1">
@@ -73,7 +73,7 @@
 					&nbsp请输入图片中的字符，不区分大小写
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="form-group" style="text-align: left">
 			<div class="col-md-offset-2 col-md-4">
@@ -84,25 +84,9 @@
 				</p>
 			</div>
 		</div>
-	</div>
+	</form>
 </div>
 <script>
-function serializeObject(form){
-	var o = {};
-	var a = form.serializeArray();
-	$.each(a, function() {
-		if (o[this.name] !== undefined) {
-			if (!o[this.name].push) {
-				o[this.name] = [o[this.name]];
-			}
-			o[this.name].push(this.value || '');
-		} else {
-			o[this.name] = this.value || '';
-		}
-	});
-	return o;
-}
-alert(JSON.stringify(serializeObject($("#regform"))))
 require(['god/Form'], function(Form){
 	var form = new Form({
 		id: 'regform',
@@ -113,7 +97,31 @@ require(['god/Form'], function(Form){
 			elem.dom.parents(".form-group").removeClass("has-error");
 		},
 		submitCallback: function(d){
-			alert(d);
+			var data = d;//jQuery.parseJSON(d);
+			if(d.result == 0){
+				$.ajax({
+					url: '/session.php',
+					type: 'post',
+					data: {
+						email: $("#regemail").val(),
+						password: $("#passwd").val(),
+					},
+					success: function(){
+						location.href = '/user/firstlogin';
+					}
+				});
+			}
+		},
+		onSubmit: function(){
+			if($("#passwd").val() != $("#repasswd").val()){
+				$("#passwd").parents(".form-group").addClass("has-error");
+				$("#repasswd").parents(".form-group").addClass("has-error");
+				return false;
+			}else{
+				$("#passwd").parents(".form-group").removeClass("has-error");
+				$("#repasswd").parents(".form-group").removeClass("has-error");
+				return true;
+			}
 		}
 	})
 })

@@ -19,6 +19,7 @@ foreach ($urls as $reg => $tpl) {
         foreach ($matched as $k=>$v){
             $smarty->assign($k, $v);
         }
+        $smarty->assign('api_url', 'http://api.jige.olege.com');
         $smarty->display($tpl.'.html');
         break;
     }
