@@ -1,0 +1,94 @@
+{!extends file='layout.html'!}
+{!block name=main!}
+<script type="text/javascript">
+$(function(){
+	var fm = $("#form");
+	fm.find("[type=button]").click(function(){
+		alert("hello");
+		data = {"name" : "深蓝",
+				"id" : "帐号是多少"
+				}
+		var name = $("#name");
+		name.val(data.name);
+		var id = $("#id");
+		id.val(data.id);
+	})
+})
+
+</script>
+
+
+
+<div id="userinfo">
+	<a href="user/index.php">
+	<img alt="头像" src="/static/images/1.jpg" width="100px">
+	</a>
+	往事深处少年兰
+</div>
+
+<form role="form" id="form">
+	<div class="form-group">
+      	<label for="inputPassword" class="col-sm-2 control-label">昵称</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="name">
+   		</div>
+   		
+   		<label for="inputPassword" class="col-sm-2 control-label">帐号</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="id" 
+         placeholder="往事">
+   		</div>
+   		
+   		<label for="inputPassword" class="col-sm-2 control-label">院校</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="inputPassword" 
+         placeholder="往事">
+   		</div>
+   		
+   		<label for="inputPassword" class="col-sm-2 control-label">qq</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="inputPassword" 
+         placeholder="往事">
+   		</div>
+   		
+   		<label for="inputPassword" class="col-sm-2 control-label">威信</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="inputPassword" 
+         placeholder="往事">
+   		</div>
+   		 
+   		<label for="inputPassword" class="col-sm-2 control-label">手机号</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="inputPassword" 
+         placeholder="往事">
+   		</div>
+   		 
+   		<label for="inputPassword" class="col-sm-2 control-label">邮箱</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="inputPassword" 
+         placeholder="往事">
+   		</div>
+   		
+   		<label for="inputPassword" class="col-sm-2 control-label">交易地</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="inputPassword" 
+         placeholder="往事">
+   		</div>
+   		
+   		<label for="inputPassword" class="col-sm-2 control-label">联系方式</label>
+    	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="lastlable" 
+         placeholder="往事">
+   		</div>
+   		
+   		<div id="button">
+			<button type="button" class="btn btn-primary btn-lg">取消</button>
+			<button type="submit" class="btn btn-primary btn-lg">保存</button>
+		</div>
+	</div>
+</form>.
+
+
+
+
+{!/block!}
