@@ -22,6 +22,15 @@
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script data-main="/static/js/main"
 	src="/static/js/require.js"></script>
+	<script type="text/javascript">
+$(function(){
+	document.getElementById('dropmenu').style.display = "none";
+});
+
+function show_dropmenu(){
+	document.getElementById('dropmenu').style.display = "";
+}
+</script>
 </head>
 <body>
 
@@ -38,9 +47,9 @@
 						class="glyphicon glyphicon-pencil"></span> 注 册</a>
 						</span>
 						<span class="auth pull-right" style="position: relative;">
-							<a>昵称 <span class="caret"></span></a>
-							<div class="dpd" style="position: absolute;z-index: 1;width: 120px;right: 0;background: #949204">
-								<a>个人信息</a>
+							<a href="javascript:show_dropmenu();"">昵称 <span class="caret"></span></a>
+							<div id="dropmenu" class="dpd" style="position: absolute;z-index: 1;width: 120px;right: 0;background: #949204">
+								<a href="user/inform">个人信息</a>
 								<a>我的书籍</a>
 								<a>退出</a>
 							</div>

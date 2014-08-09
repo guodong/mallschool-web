@@ -154,3 +154,37 @@ a:hover{
 	border-radius:10px;
 	padding:20px;
 }
+
+/*bb*/
+.pic {
+	width: 215px;
+	margin-bottom: 5px;
+}
+
+.bookinfo tr td {
+	font-size: 10px;
+	text-align: left;
+	padding: 3px;
+}
+
+.bookinfo tr td.price {
+	font-size: 16px;
+	color: red;
+	text-align: right;
+}
+
+.bookinfo tr td.title {
+	text-align: right;
+}
+
+.booktitile {
+	font-size: 16px;
+	margin: 3px;
+	color: #CC9909;
+}
+
+.collect {
+	float: right;
+	margin-right: 15px;
+	color: orange;
+}

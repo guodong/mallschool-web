@@ -1,5 +1,16 @@
 {!extends file='layout.html'!}
 {!block name=main!}
+<script type="text/javascript">
+$(function(){
+	document.getElementById('bookinfo').style.display = "none";
+	document.getElementById('addbook').style.display = "none";
+	document.getElementById('bookdetali').style.display = "none";
+});
+
+function show_bookdetail(){
+	document.getElementById('bookdetali').style.display = "";
+}
+</script>
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 userinfobox">
 		<div id="userinfo">
@@ -117,8 +128,13 @@
 				      		<input type="text" class="form-control" placeholder="出售价格">
 				   		</div>
 				   	</div>
+				   	<div class="row">
+					   	<div class="col-md-10 col-md-offset-1" style="margin-bottom:10px;">
+					   		<label class="bookdetalitext">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 </label><a href="javascript:show_bookdetail();"><span class="glyphicon glyphicon-chevron-down"></span>展开详细页面</a>
+					   	</div>
+				   	</div>
 				   	<div id="bookdetali">
-					   	<label class="bookdetalitext">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 <a><span class="glyphicon glyphicon-chevron-down"></span>展开详细页面</a></label>
+					   	
 					   	<div class="row">
 					   		<div class="col-md-2">
 					   			<label for="inputPassword" class="control-label title">自定义描述</label>
