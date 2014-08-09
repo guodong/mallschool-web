@@ -5,6 +5,8 @@ $urls = array(
 		'#^/bb$#'=>'bb/index',
         '#^/user/inform$#' => 'user/inform',
 		'#^/user/firstlogin$#' => 'user/firstlogin',
+		'#^/user/collection$#' => 'user/collection',
+		'#^/user/mybooks$#' => 'user/mybooks',
         '#^/register$#' => 'register',
 		'#^/login$#' => 'login'
 );

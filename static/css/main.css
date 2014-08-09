@@ -122,6 +122,61 @@ a:hover{
 	margin:16px 0;
 }
 
+.mybookbox{
+	margin-top:30px;
+	border: 1px solid #ccc;
+	padding:10px;
+}
+
+.bookinbox{
+	border: 1px solid #ccc;
+	border-top:none;
+	padding:10px;
+	margin:0px;
+}
+
+.bookinbox2{
+	border: 1px solid #ccc;
+	padding:10px;
+	margin:-1px 0px;
+}
+
+.flagsold{
+	width:100px;
+	margin-top:30px;
+}
+.booktitle{
+	font-size:16px;
+	font-weight:bold;
+	padding-top:5px;
+}
+.price {
+	font-family: "arial";
+	line-height: 30px;
+	width: 720px;
+}
+.search_now_price {
+	font-family: arial,'Hiragino Sans GB',"Simsun";
+	color: #FA5000;
+	font-size: 14px;
+	overflow: hidden;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.search_pre_price {
+	color: #969696;
+	text-decoration: line-through;
+	font-size: 12px;
+	font-weight: normal;
+	font-family: arial,'Hiragino Sans GB',"Simsun";
+}
+.search_discount {
+	color: #969696;
+	font-size: 12px;
+	font-weight: normal;
+	font-family: arial,'Hiragino Sans GB',"Simsun";
+}
 
 #lastlable{
 	margin-bottom:80px;
@@ -147,6 +202,7 @@ a:hover{
 	float:left;
 	margin-right:20px;
 }
+
 /*sb*/
 .sb-container{
 	margin-left: auto;
