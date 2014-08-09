@@ -71,17 +71,42 @@ a:hover{
 	font-weight: 100;
 	font-size: 34px
 }
-#userinfo{
+
+.userinfobox{
 	margin-top : 50px;
-	margin-left : 200px;
+	border: 1px solid #ccc;
+	padding-bottom:10px;
+}
+#userinfo{
+	margin-top:-20px;
+	margin-left:0px;
 	align : center;
-	color:red;
+	color:#222;
+}
+.title{
+	width:100%;
+	font-size:14px;
+	padding-top:6px;
+	text-align:right;
+	margin:5px 0;
+	font-family:Microsoft YaHei ;
 }
 
-/* #form{
-	margin-top : 80px;
-	margin-left : 200px;
-} */
+.userinfoedit{
+	padding-top: 10px;
+}
+#userinfoform .control-label{
+	font-size:14px;
+	padding-top:6px;
+	margin:5px 0;
+	font-family:Microsoft YaHei ;
+}
+
+#userinfoform .form-control {
+	font-size:14px;
+	margin:5px 0;
+}
+
 
 #lastlable{
 	margin-bottom:80px;
