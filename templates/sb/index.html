@@ -1,84 +1,175 @@
 {!extends file='layout.html'!}
 {!block name=main!}
-<div class="">
-<form  method="post">
-	<div class="sb-container">
-	<dl class="sb-book-info"> 
-	<dt>书名: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd>
-	<dt>作者: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>出版社: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>ISBN:</dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	</dl>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 userinfobox">
+		<div id="userinfo">
+			<img alt="头像" src="/static/images/head.jpg" width="100px">
+			<span style="font-family:Microsoft YaHei ;margin-left:20px;">往事深处少年蓝</span>	
+		</div>
 	</div>
-	<div class="sb-container">
-	<dl class="sb-book-info"> 
-	<dt>联系方式: </dt> 
-	<dd><span>认证用户可见</span></dd>
-	<dt>地址: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>手机号: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>价格:</dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	</dl>
-	</div>
-	<div class="sb-container">
-	<dl class="sb-book-info2"> 
-	<dt style="color:#ff6aa2; width:100%;">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 </dt> 
-
-	<dt>用户自定义描述: </dt> 
-	<dd><textarea rows="3" cols="87" style="border-style: none;"></textarea></dd> 
-	<dt>适用于学校选项: </dt> 
-	<dd><select name="" id="">   
-        <option value="1">同济大学</option>   
-        <option value="2">复旦大学</option>   
-        <option value="3">上海大学</option>   
-        <option value="4">上海交通大学</option>              
-      </select>  </dd> 
-	</dl>
-	</div>
-	<div class="sb-container">
-	<img src="/static/images/pic.jpg">
-	</div>
-	<div class="sb-container" style="height:62px;">
-	<span style="float:right;color:#77CEFF;font-weight: bold;">二手书</span><input type="checkbox" name="book" value="" checked style="float:right; margin-right:10px;">
-	<input type="submit" name="Submit" value="发布" style="background-color:#77CEFF; float:right;color:#FFFFFF;width:100px;margin-right:20px;">
-	</div>
-	
-</form>
 </div>
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
-   aria-labelledby="myModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-      <div class="modal-content">
-         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" 
-               aria-hidden="true">×
-            </button>
-            <h4 class="modal-title" id="myModalLabel">
-             请先登陆（登陆是一种态度）
-            </h4>
-         </div>
-         <div class="modal-body" style="text-align: center">
-            <div><span>账号：</span><input type="text" name="" style="margin-bottom:5px;"></div>
-            <div><span>密码：</span><input type="password" name="" ></div>
-         </div>
-         <div class="modal-footer">
-            <input type="submit" name="" >
-            <a> 忘记密码</a>
-            <a> 新用户注册</a>
-         </div>
-      </div><!-- /.modal-content -->
-   </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<script>
-   $(function () { $('#myModal').modal({
-	   keyboard: true
-   })});
-</script>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="row">
+			<form role="form" id="userinfoform" >
+				<div class="form-group userinfobox" style="padding-top: 10px">
+				
+					<div class="row">
+				   		<div class="col-md-10 col-md-offset-1 stepbox" >
+							<a class="steptext">STEP1:选择图书信息</a>
+						</div>
+					</div>
+			   		<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">ISBN</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<input type="text" class="form-control" placeholder="填写ISBN，搜索图书完整信息">
+				   		</div>
+				   		<div class="col-md-2">
+				   			<button type="button" class="btn btn-info"  style="width:60px;margin-top:15px;margin-left:-20px">搜</button>
+				   		</div>
+			   		</div>
+			   		
+			   		<div class="row" id="bookinfo">
+			   			<div class="col-md-6">
+			   				<img style="height:300px"/>
+			   			</div>
+			   			<div class="col-md-6">
+				   			<label class="control-label">书名</label>
+				   		</div>
+				   		<div class="col-md-6">
+				   			<label class="control-label">作者</label>
+				   		</div>
+				   		<div class="col-md-6">
+				   			<label class="control-label">出版社</label>
+				   		</div>
+				   		<div class="col-md-6">
+				   			<label class="control-label">定价</label>
+				   		</div>
+				   		<div class="col-md-6">
+				   			<label class="control-label">ISBN</label>
+				   		</div>
+			   		</div>
+			   		
+			   		<div class="row" id="addbook">
+				   		<div class="row">
+				   			<div class="col-md-11 col-md-offset-1">
+				   				<label class="bookdetalitext">您要出售的图书太特别了，我们还没有这本书的信息，请帮我们补全吧</label>
+				   			</div>
+				   		</div>
+			   			<div class="row">
+					   		<div class="col-md-2">
+					   			<label for="inputPassword" class="control-label title">书名</label>
+					   		</div>
+					    	<div class="col-md-8">
+					      		<input type="text" class="form-control" placeholder="书名">
+					   		</div>
+				   		</div>
+				   		<div class="row">
+					   		<div class="col-md-2">
+					   			<label for="inputPassword" class="control-label title">作者</label>
+					   		</div>
+					    	<div class="col-md-8">
+					      		<input type="text" class="form-control" placeholder="作者">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-md-2">
+					   			<label for="inputPassword" class="control-label title">出版社</label>
+					   		</div>
+					    	<div class="col-md-8">
+					      		<input type="text" class="form-control" placeholder="出版社">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-md-2">
+					   			<label for="inputPassword" class="control-label title">定价</label>
+					   		</div>
+					    	<div class="col-md-8">
+					      		<input type="text" class="form-control" placeholder="定价">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-md-2">
+					   			<label for="inputPassword" class="control-label title">ISBN</label>
+					   		</div>
+					    	<div class="col-md-8">
+					      		<input type="text" class="form-control" placeholder="ISBN">
+					   		</div>
+					   	</div>
+					    <div class="col-md-4 col-md-offset-4">
+				   			<button type="button" class="btn btn-info"  style="width:160px;margin-bottom:10px;">确定添加</button>
+				   		</div>
+			   		</div>
+
+			   		<div class="row">
+				   		<div class="col-md-10 col-md-offset-1 stepbox" >
+							<a class="steptext">STEP2:填写交易信息</a>
+						</div>
+					</div>
+					<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">价格</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<input type="text" class="form-control" placeholder="出售价格">
+				   		</div>
+				   	</div>
+				   	<div id="bookdetali">
+					   	<label class="bookdetalitext">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 <a><span class="glyphicon glyphicon-chevron-down"></span>展开详细页面</a></label>
+					   	<div class="row">
+					   		<div class="col-md-2">
+					   			<label for="inputPassword" class="control-label title">自定义描述</label>
+					   		</div>
+					    	<div class="col-md-8">
+					      		<input type="text" class="form-control" placeholder="自定义描述">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-md-2">
+					   			<label for="inputPassword" class="control-label title">适用学校</label>
+					   		</div>
+					    	<div class="col-md-8">
+					      		<input type="text" class="form-control" placeholder="适用学校">
+					   		</div>
+					   	</div>
+						<div class="sb-container">
+							<img src="/static/images/pic.jpg">
+						</div>
+				   	</div>
+
+					<div class="row">
+				   		<div class="col-md-10 col-md-offset-1 stepbox" >
+							<a class="steptext">STEP3:确认联系信息</a>
+						</div>
+					</div>
+					
+					<div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">交易地点</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<input type="text" class="form-control" placeholder="交易地点">
+				   		</div>
+				   	</div>
+				    <div class="row">
+				   		<div class="col-md-2">
+				   			<label for="inputPassword" class="control-label title">联系方式</label>
+				   		</div>
+				    	<div class="col-md-8">
+				      		<input type="text" class="form-control" placeholder="联系方式">
+				   		</div>
+				   	</div>
+				   	<div class="row">
+				   		<div class="col-md-4 col-md-offset-4">
+				   			<button type="button" class="btn btn-info"  style="width:160px;margin-bottom:10px;">发布</button>
+				   		</div>
+			   		</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 {!/block!}
