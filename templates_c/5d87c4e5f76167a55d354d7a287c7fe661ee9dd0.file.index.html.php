@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-04 07:32:38
-         compiled from "templates\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:1704753df3716d1cef5-41584274%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 13:10:34
+         compiled from "templates/index.html" */ ?>
+<?php /*%%SmartyHeaderCode:72383480353e595b1ce08e7-62371894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'bb04be02d1a49972d8596dbfa2cd7ff2fd2466c4' => 
+    '5d87c4e5f76167a55d354d7a287c7fe661ee9dd0' => 
     array (
-      0 => 'templates\\index.html',
-      1 => 1407134252,
+      0 => 'templates/index.html',
+      1 => 1407561030,
       2 => 'file',
     ),
-    'ea9b8ef91d113f1ca7659b2fc705b19b390d0d00' => 
+    'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
-      0 => 'templates\\layout.html',
-      1 => 1407134252,
+      0 => 'templates/base.html',
+      1 => 1407561021,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1704753df3716d1cef5-41584274',
+  'nocache_hash' => '72383480353e595b1ce08e7-62371894',
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_53df3716d97017_34596286',
+  'unifunc' => 'content_53e595b1d0ffc3_67876664',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53df3716d97017_34596286')) {function content_53df3716d97017_34596286($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_53e595b1d0ffc3_67876664')) {function content_53e595b1d0ffc3_67876664($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8" />
@@ -53,21 +53,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+<script data-main="js/main"
+	src="http://requirejs.org/docs/release/2.1.14/minified/require.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row" style="background-color: #6699ff">
-			<img src="/static/images/nav1.jpg" alt="..." class="img-rounded"
-				style="height: 40px; margin-left: 40px; float: left" /> <a
-				href="register.html" target="_top"><img src="/static/images/nav3.jpg"
-				alt="..." class="img-rounded"
-				style="height: 40px; margin-right: 40px; float: right" /></a> <a
-				href="index-2.html" target="_top"><img src="/static/images/nav2.jpg"
-				alt="..." class="img-rounded"
-				style="height: 40px; margin-right: 10px; float: right" /></a>
+
+	<div class="top">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					<a class="menu-left" href="/"><span
+						class="glyphicon glyphicon-home"></span> 首 页</a> <a class="menu-right"
+						href="/login"><span class="glyphicon glyphicon-off"></span> 登
+						陆</a> <a class="menu-right" href="/register"><span
+						class="glyphicon glyphicon-pencil"></span> 注 册</a>
+				</div>
+			</div>
 		</div>
-		
+	</div>
+	
 <div class="row">
 	<div class="header"
 		style="background-image: url(/static/images/bg.jpg)">
@@ -98,6 +102,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 </div>
 
-	</div>
 </body>
 </html><?php }} ?>

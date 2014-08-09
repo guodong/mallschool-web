@@ -1,5 +1,73 @@
-{!extends file='layout.html'!}
-{!block name=main!}
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 11:50:34
+         compiled from "templates/sb/index.html" */ ?>
+<?php /*%%SmartyHeaderCode:78351328653e59a8a3d9049-21036637%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '60c2b65b1a9faa24c5185a072693838a534e3f6d' => 
+    array (
+      0 => 'templates/sb/index.html',
+      1 => 1407554866,
+      2 => 'file',
+    ),
+    'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
+    array (
+      0 => 'templates/layout.html',
+      1 => 1407132197,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '78351328653e59a8a3d9049-21036637',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_53e59a8a4174c1_36012143',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_53e59a8a4174c1_36012143')) {function content_53e59a8a4174c1_36012143($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>喵校园</title>
+
+<!-- Bootstrap -->
+<link
+	href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="/static/css/main.css" rel="stylesheet">
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row" style="background-color: #6699ff">
+			<img src="/static/images/nav1.jpg" alt="..." class="img-rounded"
+				style="height: 40px; margin-left: 40px; float: left" /> <a
+				href="register.html" target="_top"><img src="/static/images/nav3.jpg"
+				alt="..." class="img-rounded"
+				style="height: 40px; margin-right: 40px; float: right" /></a> <a
+				href="index-2.html" target="_top"><img src="/static/images/nav2.jpg"
+				alt="..." class="img-rounded"
+				style="height: 40px; margin-right: 10px; float: right" /></a>
+		</div>
+		
 <div class="">
 <form  method="post">
 	<div class="sb-container">
@@ -81,4 +149,7 @@
 	   keyboard: true
    })});
 </script>
-{!/block!}
+
+	</div>
+</body>
+</html><?php }} ?>

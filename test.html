@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="GB18030">
+<title>Insert title here</title>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+$(function(){
+	var data = {email:'123', password:'234'};
+	$.ajax({
+		url: 'http://api.mallschool.me/accesstoken',
+		type: 'post',
+		data: JSON.stringify(data),
+		dataType: 'json',
+		contentType: 'application/json',
+		success: function(d){
+			alert(d)
+		}
+	})
+})
+</script>
+</body>
+</html>
