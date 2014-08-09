@@ -27,7 +27,42 @@
 	font-weight: 100;
 	font-size: 34px
 }
+#userinfo{
+	margin-top : 50px;
+	margin-left : 200px;
+	align : center;
+	color:red;
+}
 
+#form{
+	margin-top : 80px;
+	margin-left : 200px;
+}
+
+#lastlable{
+	margin-bottom:80px;
+}
+
+#button{
+	margin-top:80px;
+	text-align:center;
+}
+
+
+#middle{
+	margin-top:50px;
+}
+
+#tab{
+	list-style:none;
+}
+
+
+
+#sold{
+	float:left;
+	margin-right:20px;
+}
 /*sb*/
 .sb-container{
 	width:800px;
@@ -74,7 +109,7 @@
 	padding:5px;
 }
 .sb-book-info2 select{
-	padding£º5px;
+	paddingÂ£Âº5px;
 	border-style: none;
 	height:25px;
 }
