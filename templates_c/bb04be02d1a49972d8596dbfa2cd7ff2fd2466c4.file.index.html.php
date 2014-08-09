@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-04 14:07:19
-         compiled from "templates/index.html" */ ?>
-<?php /*%%SmartyHeaderCode:12358773353df207dbba691-78935554%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-04 07:32:38
+         compiled from "templates\index.html" */ ?>
+<?php /*%%SmartyHeaderCode:1704753df3716d1cef5-41584274%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '5d87c4e5f76167a55d354d7a287c7fe661ee9dd0' => 
+    'bb04be02d1a49972d8596dbfa2cd7ff2fd2466c4' => 
     array (
-      0 => 'templates/index.html',
-      1 => 1407132436,
+      0 => 'templates\\index.html',
+      1 => 1407134252,
       2 => 'file',
     ),
-    'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
+    'ea9b8ef91d113f1ca7659b2fc705b19b390d0d00' => 
     array (
-      0 => 'templates/layout.html',
-      1 => 1407132197,
+      0 => 'templates\\layout.html',
+      1 => 1407134252,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12358773353df207dbba691-78935554',
+  'nocache_hash' => '1704753df3716d1cef5-41584274',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_53df207dbde520_68739424',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_53df3716d97017_34596286',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53df207dbde520_68739424')) {function content_53df207dbde520_68739424($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_53df3716d97017_34596286')) {function content_53df3716d97017_34596286($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8" />
@@ -67,8 +67,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				alt="..." class="img-rounded"
 				style="height: 40px; margin-right: 10px; float: right" /></a>
 		</div>
-		<?php echo $_smarty_tpl->tpl_vars['t']->value;?>
-
+		
 <div class="row">
 	<div class="header"
 		style="background-image: url(/static/images/bg.jpg)">
