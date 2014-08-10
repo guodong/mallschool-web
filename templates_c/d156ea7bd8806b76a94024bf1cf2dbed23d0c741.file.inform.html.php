@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 14:17:59
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-10 02:32:06
          compiled from "templates\user\inform.html" */ ?>
 <?php /*%%SmartyHeaderCode:1505553e5bd9940a309-29018970%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f32963005522f381d0cff2e8048688c05b6c53fd' => 
     array (
       0 => 'templates\\base.html',
-      1 => 1407593840,
+      1 => 1407601075,
       2 => 'file',
     ),
   ),
@@ -82,8 +82,9 @@ function show_dropmenu(){
 						<span class="auth pull-right" style="position: relative;">
 							<a href="javascript:show_dropmenu();"">昵称 <span class="caret"></span></a>
 							<div id="dropmenu" class="dpd" style="position: absolute;z-index: 1;width: 120px;right: 0;background: #949204">
-								<a href="user/inform">个人信息</a>
-								<a>我的书籍</a>
+								<a href="/user/inform">个人信息</a>
+								<a href="/user/mybooks">我的书籍</a>
+								<a href="/user/collection">我的收藏</a>
 								<a>退出</a>
 							</div>
 						</span>
