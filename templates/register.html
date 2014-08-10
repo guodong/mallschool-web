@@ -1,90 +1,89 @@
 {!extends file='layout.html'!} {!block name=main!}
 
 <div class="row" style="margin: 30px;">
-	<div class="col-md-4 col-md-offset-2">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12 ">
 		<span class="glyphicon glyphicon-envelope"></span> 邮箱注册
-	</div>
-	<div class="col-md-4">
-		<span style="float: right;">已有账号？<a href="login"
-			style="color: red">登录》</a></span>
+		<span style="float: right;">已有账号？<a href="login" style="color: red">登录》</a></span>
 	</div>
 	<div class="col-md-10 col-md-offset-1"
-		style="height: 1px; margin-top: 10px; background-color: #D5D5D5; overflow: hidden;"></div>
+		style="height: 1px; margin-top: 10px; background-color: #D5D5D5; overflow: hidden;">
+	</div>
 </div>
-<div class="row"
-	style="margin-top: 40px; width: 800px; margin-right: auto; margin-left: auto;">
-	<form class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
-		<div class="form-group">
-			<label for="inputEmail3" class="col-md-2 control-label">邮箱</label>
-			<div class="col-md-4">
-				<input type="email" name="email" class="form-control" regex="^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"
-					id="regemail" placeholder="Email"> <span
-					class="help-block">使用edu邮箱注册，会得到更多权限</span>
-			</div>
-			<div class="col-md-6">
-				<div class="alert alert-info" role="alert">
-					<img src="/static/images/alart.jpg" class="alartimg" />
-					&nbsp用于登录和找回密码，不会公开
+<div class="row" 	style="margin-top: 40px; ">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<form class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
+			<div class="form-group">
+				<p class="col-lg-2 col-md-2 col-sm-2 col-xs-12 control-label" >邮箱</p>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-11">
+					<input type="email" name="email" class="form-control" regex="^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"
+						id="regemail" placeholder="Email"> 
+						<span class="help-block">使用edu邮箱注册，会得到更多权限</span>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+					<div class="alert alert-info" role="alert">
+						<img src="/static/images/alart.jpg" class="alartimg" />
+						 用于登录和找回密码，不会公开
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputPassword3" class="col-md-2 control-label">密码</label>
-			<div class="col-md-4">
-				<input type="password" name='password' class="form-control" regex="^\S{6,}$"
-					id="passwd" placeholder="password">
-			</div>
-			<div class="col-md-6">
-				<div class="alert alert-info" role="alert">
-					<img src="/static/images/alart.jpg" class="alartimg" />
-					&nbsp6-12字符，可使用字母、数字以及符号的任意组合
+			<div class="form-group">
+				<p class="col-lg-2 col-md-2 col-sm-2 col-xs-12 control-label" >密码</p>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-11">
+					<input type="password" name='password' class="form-control" regex="^\S{6,}$"
+						id="passwd" placeholder="password">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+					<div class="alert alert-info" role="alert">
+						<img src="/static/images/alart.jpg" class="alartimg" />
+						&nbsp6-12字符，可使用字母、数字以及符号的任意组合
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputPassword4" class="col-md-2 control-label">确认密码</label>
-			<div class="col-md-4">
-				<input type="password" class="form-control" id="repasswd" regex="^\S{6,}$"
-					placeholder="password">
-			</div>
-			<div class="col-md-6">
-				<div class="alert alert-info" role="alert">
-					<img src="/static/images/alart.jpg" class="alartimg" />
-					&nbsp请再次输入确认密码
+			<div class="form-group">
+				<p class="col-lg-2 col-md-2 col-sm-2 col-xs-12 control-label" >确认密码</label>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-11">
+					<input type="password" class="form-control" id="repasswd" regex="^\S{6,}$"
+						placeholder="password">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+					<div class="alert alert-info" role="alert">
+						<img src="/static/images/alart.jpg" class="alartimg" />
+						&nbsp请再次输入确认密码
+					</div>
 				</div>
 			</div>
-		</div>
-		<!-- <div class="form-group">
-			<label for="inputcode" class="col-md-2 control-label">验证码</label>
-			<div class="col-md-2">
-				<input type="text" name="captcha" class="form-control" regex="^\S{4}$"
-					id="inputcode" placeholder="code">
-			</div>
-			<div class="col-md-1">
-				<img src="/static/images/code.jpg" alt="..." class="img-rounded"
-					style="height: 30px; float: left" />
-			</div>
-			<div class="col-md-1" style="font-size: 10px; margin-top: 5px">
-				<a href="#">换一张</a>
-			</div>
-			<div class="col-md-6">
-				<div class="alert alert-info" role="alert">
-					<img src="/static/images/alart.jpg" class="alartimg" />
-					&nbsp请输入图片中的字符，不区分大小写
+			<!-- <div class="form-group">
+				<label for="inputcode" class="col-md-2 control-label">验证码</label>
+				<div class="col-md-2">
+					<input type="text" name="captcha" class="form-control" regex="^\S{4}$"
+						id="inputcode" placeholder="code">
+				</div>
+				<div class="col-md-1">
+					<img src="/static/images/code.jpg" alt="..." class="img-rounded"
+						style="height: 30px; float: left" />
+				</div>
+				<div class="col-md-1" style="font-size: 10px; margin-top: 5px">
+					<a href="#">换一张</a>
+				</div>
+				<div class="col-md-6">
+					<div class="alert alert-info" role="alert">
+						<img src="/static/images/alart.jpg" class="alartimg" />
+						&nbsp请输入图片中的字符，不区分大小写
+					</div>
+				</div>
+			</div> -->
+	
+			<div class="form-group" style="text-align: left">
+				<div class="col-md-offset-2 col-md-4">
+					<button type="submit" class="btn btn-primary">同意以下协议并注册</button>
+					<br />
+					<p style="margin-top: 10px">
+						<a href="#" alt="">《用户协议》</a>
+					</p>
 				</div>
 			</div>
-		</div> -->
-
-		<div class="form-group" style="text-align: left">
-			<div class="col-md-offset-2 col-md-4">
-				<button type="submit" class="btn btn-primary">同意以下协议并注册</button>
-				<br />
-				<p style="margin-top: 10px">
-					<a href="#" alt="">《用户协议》</a>
-				</p>
-			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 </div>
 <script>
 require(['god/Form'], function(Form){

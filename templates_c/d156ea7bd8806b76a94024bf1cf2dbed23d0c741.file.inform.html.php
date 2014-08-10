@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-10 02:32:06
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-10 04:58:10
          compiled from "templates\user\inform.html" */ ?>
 <?php /*%%SmartyHeaderCode:1505553e5bd9940a309-29018970%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,19 +7,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd156ea7bd8806b76a94024bf1cf2dbed23d0c741' => 
     array (
       0 => 'templates\\user\\inform.html',
-      1 => 1407593875,
+      1 => 1407646689,
       2 => 'file',
     ),
     '523f9d784f5c4917bffb5d11052bfdc1350458b1' => 
     array (
       0 => 'templates\\layout.html',
-      1 => 1407562559,
+      1 => 1407645708,
       2 => 'file',
     ),
     'f32963005522f381d0cff2e8048688c05b6c53fd' => 
     array (
       0 => 'templates\\base.html',
-      1 => 1407601075,
+      1 => 1407645822,
       2 => 'file',
     ),
   ),
@@ -70,7 +70,7 @@ function show_dropmenu(){
 	<div class="top">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1">
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-1 col-xs-12">
 					<a class="menu-left" href="/"><span
 						class="glyphicon glyphicon-home"></span> 首 页</a> 
 						<span class="noauth">
@@ -96,7 +96,7 @@ function show_dropmenu(){
 <div class="container-fluid">
 
 	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1">
+		<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
 <script type="text/javascript">
 $(function(){
 	var fm = $("#userinfoform");
@@ -115,7 +115,7 @@ $(function(){
 </script>
 
 <div class="row">
-	<div class="col-md-8 col-md-offset-2 userinfobox">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 userinfobox">
 		<div id="userinfo">
 			<img alt="头像" src="/static/images/head.jpg" width="100px">
 			<span style="font-family:Microsoft YaHei ;margin-left:20px;">往事深处少年蓝</span>	
@@ -124,134 +124,133 @@ $(function(){
 </div>
 
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 ">
 		<div class="row">
 			<form role="form" id="userinfoform" >
 				<div class="form-group userinfobox" style="padding-top: 10px">
-
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">昵称</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">昵称</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">昵称</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">昵称</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">帐号</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label class="control-label title">帐号</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">帐号</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">帐号</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">院校</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">院校</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">院校</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">院校</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">QQ</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">QQ</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">QQ</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">QQ</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">微信</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">微信</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">微信</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">微信</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">手机号</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">手机号</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">手机号</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">手机号</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">邮箱</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">邮箱</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">邮箱</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">邮箱</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 					<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">交易地</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">交易地</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">交易地</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">交易地</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 			   		
 			   		<div class="row">
-				   		<div class="col-md-2">
-				   			<label for="inputPassword" class="control-label title">联系方式</label>
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				   			<label  class="control-label title">联系方式</label>
 				   		</div>
-				    	<div class="col-md-8">
-				      		<label for="inputPassword" class="control-label"  id="name">联系方式</label>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+				      		<label  class="control-label"  id="name">联系方式</label>
 				   		</div>
-				   		<div class="col-md-2 userinfoedit">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
 				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
 				   		</div>
-				   		<div class="col-md-10 col-md-offset-1" 
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
 				</div>
