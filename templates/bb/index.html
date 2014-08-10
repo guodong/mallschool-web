@@ -1,7 +1,18 @@
 ﻿{!extends file='layout.html'!}
 {!block name=main!}
-		<div class="row"
-			style="width: 1100px; margin-top: 10px; margin-left: auto; margin-right: auto;">
+<script type="text/javascript">
+$(function(){
+	document.getElementById('sellerinfo1').style.display = "none";
+});
+
+function show_sellerinfo(index){
+	var elementname = 'sellerinfo'+index;
+	document.getElementById(elementname).style.display = "";
+}
+</script>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="row" style="margin-top:20px;">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<div class="col-md-6">
@@ -10,13 +21,10 @@
 							<span class="input-group-addon"> <span
 								class="glyphicon glyphicon-search"></span>
 							</span>
-
 						</div>
-						<!-- /input-group -->
 					</div>
-					<!-- /.col-lg-6 -->
-					<div class="col-md-2 col-md-offset-1" style="margin-top: 5px;">
-						<input type="checkbox">&nbsp只看二手书</input>
+					<div class="col-md-3 " style="margin-top: 5px;">
+						<input type="checkbox">只看二手书
 					</div>
 					<div class="col-md-3">
 						<div class="dropdown">
@@ -24,17 +32,12 @@
 								id="dropdownMenu1" data-toggle="dropdown">
 								按教材搜索 <span class="caret"></span>
 							</button>
-							<ul class="dropdown-menu" role="menu"
-								aria-labelledby="dropdownMenu1">
-								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Action</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Another action</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Something else here</a></li>
-								<li role="presentation" class="divider"></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Separated link</a></li>
+							<ul class="dropdown-menu">
+								<li ><a tabindex="-1" href="#">Action</a></li>
+								<li ><a tabindex="-1" href="#">Another action</a></li>
+								<li ><a  tabindex="-1" href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li ><a tabindex="-1"	href="#">Separated link</a></li>
 							</ul>
 						</div>
 					</div>
@@ -42,13 +45,11 @@
 			</div>
 		</div>
 
-		<div class="row"
-			style="width: 1100px; margin-left: auto; margin-right: auto;">
+		<div class="row">
 			<div class="col-md-3" id="book-list0">
-
-				<div class="panel panel-default" style="margin-top: 10px;">
+				<div class="panel panel-default booklistbox"  >
 					<div class="panel-body">
-						<img src="/static/images/book.jpg" alt="" class="pic" style="" /> <strong
+						<img src="/static/images/book.jpg" alt="" class="pic" /> <strong
 							class="booktitile">练习一个人</strong><span
 							class="glyphicon glyphicon-book"></span>
 						<table class="bookinfo">
@@ -65,7 +66,12 @@
 							<tr>
 								<td class="title">ISBN</td>
 								<td>9787539974033</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="title">售价</td>
 								<td class="price"><strong>￥27.50</strong></td>
+								<td></td>
 							</tr>
 						</table>
 						<div class="media">
@@ -74,132 +80,28 @@
 								style="width: 30px; margin-top: 4px;">
 							</a>
 							<div class="media-body">
-								<a class="media-heading">白天不懂夜的黑</a><br /> <span
-									style="float: left;">2014-07-14</span> <a><span
-									class="glyphicon glyphicon-chevron-down"
-									style="margin-left: 10px; float: right;"></span></a> <a
-									class="collect">收藏</a>
+								<a class="media-heading">白天不懂夜的黑</a>
+								<br /> <span>2014-07-14</span>
+								<a class="collect">收藏</a>
+								<a class="dropsellerinfo" href="javascript:show_sellerinfo(1);"><span class="glyphicon glyphicon-chevron-down"></span></a> 
 							</div>
+						</div>
+						<div id="sellerinfo1" class="sellerinfo">
+							<div	style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+							<p>卖家信息</p>
+							<p>微信：123456789</p>
+							<p>手机：13812345678</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3" id="book-list1">
-				<div class="panel panel-default" style="margin-top: 10px;">
-					<div class="panel-body">
-						<img src="/static/images/book.jpg" alt="" class="pic" /> <strong
-							class="booktitile">练习一个人</strong><span
-							class="glyphicon glyphicon-book"></span>
-						<table class="bookinfo">
-							<tr>
-								<td class="title">作者</td>
-								<td>陶立夏 著</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>江苏文艺出版社</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td class="title">ISBN</td>
-								<td>9787539974033</td>
-								<td class="price"><strong>￥27.50</strong></td>
-							</tr>
-						</table>
-						<div class="media">
-							<a class="pull-left" href="#"> <img class="media-object"
-								src="/static/images/head.jpg" alt="..."
-								style="width: 30px; margin-top: 4px;">
-							</a>
-							<div class="media-body">
-								<a class="media-heading">白天不懂夜的黑</a><br /> <span
-									style="float: left;">2014-07-14</span> <a><span
-									class="glyphicon glyphicon-chevron-down"
-									style="margin-left: 10px; float: right;"></span></a> <a
-									class="collect">收藏</a>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="col-md-3" id="book-list2">
-				<div class="panel panel-default" style="margin-top: 10px;">
-					<div class="panel-body">
-						<img src="/static/images/book.jpg" alt="" class="pic" /> <strong
-							class="booktitile">练习一个人</strong><span
-							class="glyphicon glyphicon-book"></span>
-						<table class="bookinfo">
-							<tr>
-								<td class="title">作者</td>
-								<td>陶立夏 著</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>江苏文艺出版社</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td class="title">ISBN</td>
-								<td>9787539974033</td>
-								<td class="price"><strong>￥27.50</strong></td>
-							</tr>
-						</table>
-						<div class="media">
-							<a class="pull-left" href="#"> <img class="media-object"
-								src="/static/images/head.jpg" alt="..."
-								style="width: 30px; margin-top: 4px;">
-							</a>
-							<div class="media-body">
-								<a class="media-heading">白天不懂夜的黑</a><br /> <span
-									style="float: left;">2014-07-14</span> <a><span
-									class="glyphicon glyphicon-chevron-down"
-									style="margin-left: 10px; float: right;"></span></a> <a
-									class="collect">收藏</a>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="col-md-3"  id="book-list3">
-				<div class="panel panel-default" style="margin-top: 10px;">
-					<div class="panel-body">
-						<img src="/static/images/book.jpg" alt="" class="pic" /> <strong
-							class="booktitile">练习一个人</strong><span
-							class="glyphicon glyphicon-book"></span>
-						<table class="bookinfo">
-							<tr>
-								<td class="title">作者</td>
-								<td>陶立夏 著</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>江苏文艺出版社</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td class="title">ISBN</td>
-								<td>9787539974033</td>
-								<td class="price"><strong>￥27.50</strong></td>
-							</tr>
-						</table>
-						<div class="media">
-							<a class="pull-left" href="#"> <img class="media-object"
-								src="/static/images/head.jpg" alt="..."
-								style="width: 30px; margin-top: 4px;">
-							</a>
-							<div class="media-body">
-								<a class="media-heading">白天不懂夜的黑</a><br /> <span
-									style="float: left;">2014-07-14</span> <a><span
-									class="glyphicon glyphicon-chevron-down"
-									style="margin-left: 10px; float: right;"></span></a> <a
-									class="collect">收藏</a>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
+	</div>
+</div>
 {!/block!}

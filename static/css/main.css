@@ -195,7 +195,6 @@ a:hover{
 	text-align:center;
 }
 
-
 #middle{
 	margin-top:50px;
 }
@@ -203,8 +202,6 @@ a:hover{
 #tab{
 	list-style:none;
 }
-
-
 
 #sold{
 	float:left;
@@ -221,10 +218,13 @@ a:hover{
 
 /*bb*/
 .pic {
-	width: 215px;
+	width: 130px;
 	margin-bottom: 5px;
 }
 
+.booklistbox{
+	margin:-10px -10px 20px -10px;
+}
 .bookinfo tr td {
 	font-size: 10px;
 	text-align: left;
@@ -232,9 +232,13 @@ a:hover{
 }
 
 .bookinfo tr td.price {
-	font-size: 16px;
+	font-size: 13px;
 	color: red;
 	text-align: right;
+}
+
+.media-heading{
+	font-size:12px;
 }
 
 .bookinfo tr td.title {
@@ -242,13 +246,21 @@ a:hover{
 }
 
 .booktitile {
-	font-size: 16px;
+	font-size: 14px;
 	margin: 3px;
 	color: #CC9909;
 }
 
 .collect {
-	float: right;
-	margin-right: 15px;
 	color: orange;
+}
+
+.dropsellerinfo{
+	float:right;
+}
+
+.sellerinfo p{
+	font-size:9px;
+	margin-bottom:-3px;
+	margin-right:5px;
 }
