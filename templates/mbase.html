@@ -20,22 +20,44 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script data-main="/static/js/main" src="/static/js/require.js"></script>
+<script>
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+
+</script>
 </head>
 <body>
 <div class="container-fluid">
-<div class=""></div>
+<div class="row">
+	<div class="col-xs-12 header" id="login">
+		<img url="/static/images/head.jpg" alt=""/>
+	</div>
+	<div class="col-xs-12 header" id="unlogin">
+		
+	</div>
+</div>
 	{!block name=main!} {!/block!}
 <div class="row" style="margin:8px 0px 0px 0px;">
-	<div class="col-xs-3 footer">
+	<div class="col-xs-6 footer">
 		<span class="label label-primary">返回首页</span>
 	</div>
-	<div class="col-xs-3 footer">
+	<div class="col-xs-6 footer">
 		<span class="label label-success">我要买书</span>
 	</div>
-	<div class="col-xs-3 footer">
+	<div class="col-xs-6 footer">
 		<span class="label label-info">我要卖书</span>
 	</div>
-	<div class="col-xs-3 footer">
+	<div class="col-xs-6 footer">
 		<span class="label label-warning">联系我们</span>
 	</div>
 </div>

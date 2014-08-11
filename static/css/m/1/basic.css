@@ -1,4 +1,7 @@
 @CHARSET "UTF-8";
+.header{
+	height:30px;
+}
 .mbookinbox{
 	border: 1px solid #ccc;
 	padding:10px;
@@ -10,16 +13,11 @@
 	min-height:35px;
 }
 
-.selecttxt{
-	font-size:14px;
-	background-color:#D5CFDE;
-	display:block;
-	margin-bottom:10px;
-	min-height:30px;
-	text-align:center;
-	height:25px; 
-	line-height:25px; 
+.input-group-addon{
+	min-height:35px;
+	min-width:40px;
 }
+
 .footer span{
 	display:block;
 	min-height:30px;
@@ -27,28 +25,25 @@
 	height:25px; 
 	line-height:25px; 
 	width:100%;
-	font-size:14px;
+	font-size:12px;
+	margin-top:10px;
 }
 
 .booktitle{
-	font-size:14px;
+	font-size:12px;
 	font-weight:bold;
 	padding-top:3px;
 }
 
-.input-group-addon{
-	min-width:200px;
-}
 
 .flagsold{
-	margin-top:30px;
-	min-width: 80px;
+	min-width: 100px;
 }
 
 .search_now_price {
 	font-family: arial,'Hiragino Sans GB',"Simsun";
 	color: #FA5000;
-	font-size: 14px;
+	font-size: 12px;
 	overflow: hidden;
 	font-weight: bold;
 	margin-right: 10px;
@@ -56,13 +51,17 @@
 .search_pre_price {
 	color: #969696;
 	text-decoration: line-through;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: normal;
 	font-family: arial,'Hiragino Sans GB',"Simsun";
 }
 .search_discount {
 	color: #969696;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: normal;
 	font-family: arial,'Hiragino Sans GB',"Simsun";
+}
+
+.search_book_author{
+	font-size:11px;
 }
