@@ -8,5 +8,6 @@ $urls = array(
 		'#^/user/collection$#' => 'user/collection',
 		'#^/user/mybooks$#' => 'user/mybooks',
         '#^/register$#' => 'register',
-		'#^/login$#' => 'login'
+		'#^/login$#' => 'login',
+		'#^/m?.*$#' => 'm/index'
 );
