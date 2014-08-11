@@ -1,7 +1,17 @@
 @CHARSET "UTF-8";
 .header{
 	height:30px;
+	margin-top:5px;
+	background-color:#eee;
+	width:100%;
 }
+.header a{
+	font-size:12px;
+	height:25px; 
+	line-height:25px; 
+	margin-left:5px;
+}
+
 .mbookinbox{
 	border: 1px solid #ccc;
 	padding:10px;

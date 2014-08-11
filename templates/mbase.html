@@ -33,17 +33,34 @@ function GetRequest() {
    }
    return theRequest;
 }
-
+function GetNickName(woid) {
+	//从数据库中获取用户的昵称和头像地址
+   return woid;
+}
+$(function(){
+	var Request=GetRequest();
+	if(null==Request["wopenid"]){
+		document.getElementById('unlogin').style.display = "";
+		document.getElementById('login').style.display = "none";
+	}else{
+		var userinfo = GetNickName(Request['wopenid']);
+		$("#usernickname").html(userinfo); 
+		document.getElementById('login').style.display = "";
+		document.getElementById('unlogin').style.display = "none";
+	}
+});
 </script>
 </head>
 <body>
 <div class="container-fluid">
 <div class="row">
 	<div class="col-xs-12 header" id="login">
-		<img url="/static/images/head.jpg" alt=""/>
+		<img src="/static/images/head.jpg" alt="" width="30px" height="30px"/>
+		<a>亲爱的：</a>
+		<a id="usernickname"></a>
 	</div>
 	<div class="col-xs-12 header" id="unlogin">
-		
+		<p>未登录</p>
 	</div>
 </div>
 	{!block name=main!} {!/block!}
