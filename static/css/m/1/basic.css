@@ -5,13 +5,18 @@
 	background-color:#eee;
 	width:100%;
 }
-.header a{
+
+.header p{
 	font-size:12px;
+	float:left;
 	height:25px; 
 	line-height:25px; 
 	margin-left:5px;
+	
 }
-
+.header img{
+	float:left;
+}
 .mbookinbox{
 	border: 1px solid #ccc;
 	padding:10px;
@@ -23,9 +28,9 @@
 	min-height:35px;
 }
 
-.input-group-addon{
+.input-group-btn button{
 	min-height:35px;
-	min-width:40px;
+	min-width:60px;
 }
 
 .footer span{

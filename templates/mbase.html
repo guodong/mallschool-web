@@ -53,17 +53,6 @@ $(function(){
 </head>
 <body>
 <div class="container-fluid">
-<div class="row">
-	<div class="col-xs-12 header" id="login">
-		<img src="/static/images/head.jpg" alt="" width="30px" height="30px"/>
-		<a>亲爱的：</a>
-		<a id="usernickname"></a>
-	</div>
-	<div class="col-xs-12 header" id="unlogin">
-		<p>未登录</p>
-	</div>
-</div>
-	{!block name=main!} {!/block!}
 <div class="row" style="margin:8px 0px 0px 0px;">
 	<div class="col-xs-6 footer">
 		<span class="label label-primary">返回首页</span>
@@ -78,6 +67,18 @@ $(function(){
 		<span class="label label-warning">联系我们</span>
 	</div>
 </div>
+<div class="row">
+	<div class="col-xs-12 header" id="login">
+		<img src="/static/images/head.jpg" alt="" width="30px" height="30px"/>
+		<p>亲爱的：</p>
+		<p id="usernickname"></p>
+	</div>
+	<div class="col-xs-12 header" id="unlogin">
+		<p>未登录</p>
+	</div>
+</div>
+	{!block name=main!} {!/block!}
+
 </div>
 </body>
 </html>
