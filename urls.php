@@ -9,5 +9,7 @@ $urls = array(
 		'#^/user/mybooks$#' => 'user/mybooks',
         '#^/register$#' => 'register',
 		'#^/login$#' => 'login',
-		'#^/m?.*$#' => 'm/index'
+		'#^/m/binding\?.*$#' => 'm/binding',
+		'#^/m/sellbook\?.*$#' => 'm/sellbook',
+		'#^/m\?.*$#' => 'm/index'
 );

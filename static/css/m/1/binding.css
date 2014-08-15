@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.form-horizontal{
+	margin-top:10px;
+}
+.control-label{
+	height:30px;
+	line-height:30px;
+	text-align:right;
+}
+
+p{
+	margin:10px auto;
+}
+
