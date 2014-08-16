@@ -8,8 +8,44 @@ $(function(){
 });
 
 function show_bookdetail(){
-	document.getElementById('bookdetali').style.display = "";
+	if ($("#bookdetali").css("display") == "none") {
+        $("#bookdetali").css("display", "inline");
+        $("#detail-status").html('<span  class="glyphicon glyphicon-chevron-up"></span>收缩详细页面');
+    } else {
+        $("#bookdetali").css("display", "none");
+        $("#detail-status").html('<span  class="glyphicon glyphicon-chevron-down"></span>展开详细页面');
+    }
+
 }
+function search_book(){
+	var reg=/^\d{13}|\d{10}$/;
+	if(reg.test($("#book-ISBN").val())){
+		
+		$.ajax({ url: "http://api.jige.olege.com/book", 
+		    type : "get", 
+		    data: {q:$("#book-ISBN").val(),type:"ISBN"},
+		    success: function(d){
+		    	if(d.result == 0){
+		    		document.getElementById('bookinfo').style.display = "";
+		    		document.getElementById('addbook').style.display = "none";
+			    	$("#book-name").text("书名："+d.data.name); 
+			    	$("#book-author").text("作者："+d.data.author);
+			    	$("#book-press").text("出版社："+d.data.press);
+			    	$("#book-p").text("定价："+d.data.fixedPrice);
+			    	$("#book-isbn2").text("ISBN："+d.data.isbn);
+		    	}
+		    },
+			error:function(){
+				document.getElementById('bookinfo').style.display = "none";
+				document.getElementById('addbook').style.display = "";
+			}
+		}); 
+	}
+	else{
+		alert("isbn号不正确");
+	}
+}
+
 </script>
 <div class="row">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12  userinfobox">
@@ -35,10 +71,10 @@ function show_bookdetail(){
 				   			<label class="control-label title">ISBN</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
-				      		<input type="text" class="form-control" placeholder="填写ISBN，搜索图书完整信息">
+				      		<input type="text" class="form-control" placeholder="填写ISBN，搜索图书完整信息"  id="book-ISBN">
 				   		</div>
 				   		<div class="col-lg-1col-md-1 col-sm-1 col-xs-1">
-				   			<button type="button" class="btn btn-info btn-block"  style="min-width:60px;margin-top:15px;margin-left:-20px">搜</button>
+				   			<button type="button" class="btn btn-info btn-block"  style="min-width:60px;margin-top:15px;margin-left:-20px" onclick="javascript:search_book();">搜</button>
 				   		</div>
 			   		</div>
 			   		
@@ -47,19 +83,19 @@ function show_bookdetail(){
 			   				<img style="height:300px"/>
 			   			</div>
 			   			<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
-				   			<label class="control-label">书名</label>
+				   			<label class="control-label" id="book-name">书名</label>
 				   		</div>
 				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
-				   			<label class="control-label">作者</label>
+				   			<label class="control-label" id="book-author">作者</label>
 				   		</div>
 				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
-				   			<label class="control-label">出版社</label>
+				   			<label class="control-label" id="book-press">出版社</label>
 				   		</div>
 				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
-				   			<label class="control-label">定价</label>
+				   			<label class="control-label" id="book-p">定价</label>
 				   		</div>
 				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
-				   			<label class="control-label">ISBN</label>
+				   			<label class="control-label" id="book-isbn2">ISBN</label>
 				   		</div>
 			   		</div>
 			   		
@@ -129,7 +165,7 @@ function show_bookdetail(){
 				   	</div>
 				   	<div class="row">
 					   	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 " style="margin-bottom:10px;">
-					   		<label class="bookdetalitext">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 <a href="javascript:show_bookdetail();"><span class="glyphicon glyphicon-chevron-down"></span>展开详细页面</a></label>
+					   		<label class="bookdetalitext">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 <a href="javascript:show_bookdetail();" id="detail-status"><span  class="glyphicon glyphicon-chevron-down"></span>展开详细页面</a></label>
 					   	</div>
 				   	</div>
 				   	<div id="bookdetali">
