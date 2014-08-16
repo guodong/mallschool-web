@@ -118,10 +118,12 @@ a:hover{
 	padding-top: 20px;
 }
 #userinfoform .control-label{
+	width:300px;
 	font-size:14px;
 	padding-top:6px;
 	margin:16px 0;
 	font-family:Microsoft YaHei ;
+	border:0;
 }
 
 #userinfoform .form-control {
