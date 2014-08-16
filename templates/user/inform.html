@@ -4,16 +4,44 @@
 $(function(){
 	var fm = $("#userinfoform");
 	fm.find("[type=button]").click(function(){
-		alert("hello");
-		data = {"name" : "深蓝",
-				"id" : "帐号是多少"
-				}
-		var name = $("#name");
-		name.val(data.name);
-		var id = $("#id");
-		id.val(data.id);
-	})
+		$.ajax({ url: "http://api.jige.olege.com/user", 
+			type : "post",
+			context: document.body, 
+			data: {id :"53ca2535badeb81003d63af2"},
+			success: function(){
+				alert("success");
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	});
 })
+
+
+
+
+$.ajax({ url: "http://api.jige.olege.com/user", 
+	type : "get",
+	context: document.body, 
+	data: {id :"53ca2535badeb81003d63af2"},
+	success: function(d){
+   		alert(d);
+   		data = JSON.parse(d);
+   		var realname = $("#realname");
+   		realname.val(data.data.realname);
+   		var id = $("#id");
+   		id.val(data.data.id);
+   		var school = $("#school");
+   		school.val(data.data.school);
+   		var qq = $("#qq");
+   		qq.val(data.data.qq);
+   		var wechat = $("#wechat");
+   		wechat.html(data.data.wechat);
+   		var email = $("#email");
+   		email.val(data.data.email);
+	}}
+);
 
 </script>
 
@@ -36,11 +64,10 @@ $(function(){
 				   			<label  class="control-label title">昵称</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">昵称</label>
+				      		
+				      		<input type="text" class="control-label" id="realname"/>
 				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
-				   		</div>
+				   		
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
@@ -50,10 +77,7 @@ $(function(){
 				   			<label class="control-label title">帐号</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">帐号</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<input type="text" class="control-label" id="id"/>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -64,10 +88,7 @@ $(function(){
 				   			<label  class="control-label title">院校</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">院校</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="school">院校</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -78,10 +99,7 @@ $(function(){
 				   			<label  class="control-label title">QQ</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">QQ</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="qq">QQ</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -92,10 +110,7 @@ $(function(){
 				   			<label  class="control-label title">微信</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">微信</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="wechat">微信</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -106,10 +121,7 @@ $(function(){
 				   			<label  class="control-label title">手机号</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">手机号</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="tel">手机号</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -120,10 +132,7 @@ $(function(){
 				   			<label  class="control-label title">邮箱</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">邮箱</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="email">邮箱</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -134,10 +143,7 @@ $(function(){
 				   			<label  class="control-label title">交易地</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">交易地</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="location">交易地</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -148,15 +154,21 @@ $(function(){
 				   			<label  class="control-label title">联系方式</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">联系方式</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="lianxi">联系方式</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
-							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;">
+							</div>
 			   		</div>
 				</div>
+				<div id = "button">
+				   <button type="button" class="btn btn-primary" style = " width : 120px;">
+     				 保存
+   					</button>
+   					   <button type="button" class="btn btn-primary" style = " width : 120px;">
+     				 取消
+  					 </button>
+  				</div>
 			</form>
 		</div>
 	</div>
