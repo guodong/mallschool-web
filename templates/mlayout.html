@@ -20,36 +20,6 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script data-main="/static/js/main" src="/static/js/require.js"></script>
-<script>
-function GetRequest() {
-   var url = location.search; //获取url中"?"符后的字串
-   var theRequest = new Object();
-   if (url.indexOf("?") != -1) {
-      var str = url.substr(1);
-      strs = str.split("&");
-      for(var i = 0; i < strs.length; i ++) {
-         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-      }
-   }
-   return theRequest;
-}
-function GetNickName(woid) {
-	//从数据库中获取用户的昵称和头像地址
-   return woid;
-}
-$(function(){
-	var Request=GetRequest();
-	if(null==Request["wopenid"]){
-		document.getElementById('unlogin').style.display = "";
-		document.getElementById('login').style.display = "none";
-	}else{
-		var userinfo = GetNickName(Request['wopenid']);
-		$("#usernickname").html(userinfo); 
-		document.getElementById('login').style.display = "";
-		document.getElementById('unlogin').style.display = "none";
-	}
-});
-</script>
 </head>
 <body>
 <div class="container-fluid">
@@ -67,18 +37,7 @@ $(function(){
 		<span class="label label-warning">帐号绑定</span>
 	</div>
 </div>
-<div class="row">
-	<div class="col-xs-12 header" id="login">
-		<img src="/static/images/head.jpg" alt="" width="30px" height="30px"/>
-		<p>亲爱的：</p>
-		<p id="usernickname"></p>
-	</div>
-	<div class="col-xs-12 header" id="unlogin">
-		<p>未登录</p>
-	</div>
-</div>
 	{!block name=main!} {!/block!}
-
 </div>
 </body>
 </html>
