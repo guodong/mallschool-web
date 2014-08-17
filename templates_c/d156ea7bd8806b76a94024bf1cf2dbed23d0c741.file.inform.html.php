@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-17 02:17:22
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-17 11:43:35
          compiled from "templates\user\inform.html" */ ?>
 <?php /*%%SmartyHeaderCode:1505553e5bd9940a309-29018970%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd156ea7bd8806b76a94024bf1cf2dbed23d0c741' => 
     array (
       0 => 'templates\\user\\inform.html',
-      1 => 1408241840,
+      1 => 1408275811,
       2 => 'file',
     ),
     '523f9d784f5c4917bffb5d11052bfdc1350458b1' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f32963005522f381d0cff2e8048688c05b6c53fd' => 
     array (
       0 => 'templates\\base.html',
-      1 => 1408241394,
+      1 => 1408272711,
       2 => 'file',
     ),
   ),
@@ -38,6 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="SHORTCUT ICON" href="/static/images/ico/favicon.ico"> 
 <title>喵校园</title>
 
 <!-- Bootstrap -->
