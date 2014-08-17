@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-10 04:58:10
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-17 01:53:54
          compiled from "templates\user\inform.html" */ ?>
 <?php /*%%SmartyHeaderCode:1505553e5bd9940a309-29018970%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd156ea7bd8806b76a94024bf1cf2dbed23d0c741' => 
     array (
       0 => 'templates\\user\\inform.html',
-      1 => 1407646689,
+      1 => 1408236240,
       2 => 'file',
     ),
     '523f9d784f5c4917bffb5d11052bfdc1350458b1' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f32963005522f381d0cff2e8048688c05b6c53fd' => 
     array (
       0 => 'templates\\base.html',
-      1 => 1407645822,
+      1 => 1408240321,
       2 => 'file',
     ),
   ),
@@ -74,14 +74,12 @@ function show_dropmenu(){
 					<a class="menu-left" href="/"><span
 						class="glyphicon glyphicon-home"></span> 首 页</a> 
 						<span class="noauth">
-						<a class="menu-right"
-						href="/login"><span class="glyphicon glyphicon-off"></span> 登
-						陆</a> <a class="menu-right" href="/register"><span
-						class="glyphicon glyphicon-pencil"></span> 注 册</a>
+						<a class="menu-right" href="/login"><span class="glyphicon glyphicon-off"></span> 登陆</a>
+						<a class="menu-right" href="/register"><span class="glyphicon glyphicon-pencil"></span> 注 册</a>
 						</span>
 						<span class="auth pull-right" style="position: relative;">
-							<a href="javascript:show_dropmenu();"">昵称 <span class="caret"></span></a>
-							<div id="dropmenu" class="dpd" style="position: absolute;z-index: 1;width: 120px;right: 0;background: #949204">
+							<a href="javascript:show_dropmenu();">昵称 <span class="caret"></span></a>
+							<div id="dropmenu" class="dpd" >
 								<a href="/user/inform">个人信息</a>
 								<a href="/user/mybooks">我的书籍</a>
 								<a href="/user/collection">我的收藏</a>
@@ -101,16 +99,44 @@ function show_dropmenu(){
 $(function(){
 	var fm = $("#userinfoform");
 	fm.find("[type=button]").click(function(){
-		alert("hello");
-		data = {"name" : "深蓝",
-				"id" : "帐号是多少"
-				}
-		var name = $("#name");
-		name.val(data.name);
-		var id = $("#id");
-		id.val(data.id);
-	})
+		$.ajax({ url: "http://api.jige.olege.com/user", 
+			type : "post",
+			context: document.body, 
+			data: {id :"53ca2535badeb81003d63af2"},
+			success: function(){
+				alert("success");
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	});
 })
+
+
+
+
+$.ajax({ url: "http://api.jige.olege.com/user", 
+	type : "get",
+	context: document.body, 
+	data: {id :"53ca2535badeb81003d63af2"},
+	success: function(d){
+   		alert(d);
+   		data = JSON.parse(d);
+   		var realname = $("#realname");
+   		realname.val(data.data.realname);
+   		var id = $("#id");
+   		id.val(data.data.id);
+   		var school = $("#school");
+   		school.val(data.data.school);
+   		var qq = $("#qq");
+   		qq.val(data.data.qq);
+   		var wechat = $("#wechat");
+   		wechat.html(data.data.wechat);
+   		var email = $("#email");
+   		email.val(data.data.email);
+	}}
+);
 
 </script>
 
@@ -133,11 +159,10 @@ $(function(){
 				   			<label  class="control-label title">昵称</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">昵称</label>
+				      		
+				      		<input type="text" class="control-label" id="realname"/>
 				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
-				   		</div>
+				   		
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
 			   		</div>
@@ -147,10 +172,7 @@ $(function(){
 				   			<label class="control-label title">帐号</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">帐号</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<input type="text" class="control-label" id="id"/>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -161,10 +183,7 @@ $(function(){
 				   			<label  class="control-label title">院校</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">院校</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="school">院校</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -175,10 +194,7 @@ $(function(){
 				   			<label  class="control-label title">QQ</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">QQ</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="qq">QQ</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -189,10 +205,7 @@ $(function(){
 				   			<label  class="control-label title">微信</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">微信</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="wechat">微信</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -203,10 +216,7 @@ $(function(){
 				   			<label  class="control-label title">手机号</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">手机号</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="tel">手机号</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -217,10 +227,7 @@ $(function(){
 				   			<label  class="control-label title">邮箱</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">邮箱</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="email">邮箱</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -231,10 +238,7 @@ $(function(){
 				   			<label  class="control-label title">交易地</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">交易地</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="location">交易地</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -245,15 +249,21 @@ $(function(){
 				   			<label  class="control-label title">联系方式</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<label  class="control-label"  id="name">联系方式</label>
-				   		</div>
-				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 userinfoedit">
-				   			<a><span class="glyphicon glyphicon-edit"></span>编辑</a>
+				      		<label  class="control-label"  id="lianxi">联系方式</label>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
-							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;">
+							</div>
 			   		</div>
 				</div>
+				<div id = "button">
+				   <button type="button" class="btn btn-primary" style = " width : 120px;">
+     				 保存
+   					</button>
+   					   <button type="button" class="btn btn-primary" style = " width : 120px;">
+     				 取消
+  					 </button>
+  				</div>
 			</form>
 		</div>
 	</div>

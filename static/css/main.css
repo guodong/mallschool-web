@@ -276,3 +276,15 @@ table.bookinfo{
 	color:#428bca;
 }
 
+.dpd{
+	position: absolute;
+	z-index: 1;
+	width: 100px;
+	right: 0;
+	background: #428bca;
+}
+
+.dpd a{
+	display:block;
+	width:100%;
+}
