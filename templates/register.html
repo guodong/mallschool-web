@@ -10,7 +10,6 @@
 	</div>
 </div>
 <div class="row" 	style="margin-top: 40px; ">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 		<form class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
 			<div class="form-group">
 				<p class="col-lg-2 col-md-2 col-sm-2 col-xs-12 control-label" >邮箱</p>
@@ -19,7 +18,7 @@
 						id="regemail" placeholder="Email"> 
 						<span class="help-block">使用edu邮箱注册，会得到更多权限</span>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-10">
 					<div class="alert alert-info" role="alert">
 						<img src="/static/images/alart.jpg" class="alartimg" />
 						 用于登录和找回密码，不会公开
@@ -32,7 +31,7 @@
 					<input type="password" name='password' class="form-control" regex="^\S{6,}$"
 						id="passwd" placeholder="password">
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-10">
 					<div class="alert alert-info" role="alert">
 						<img src="/static/images/alart.jpg" class="alartimg" />
 						&nbsp6-12字符，可使用字母、数字以及符号的任意组合
@@ -45,7 +44,7 @@
 					<input type="password" class="form-control" id="repasswd" regex="^\S{6,}$"
 						placeholder="password">
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-10">
 					<div class="alert alert-info" role="alert">
 						<img src="/static/images/alart.jpg" class="alartimg" />
 						&nbsp请再次输入确认密码
@@ -131,7 +130,6 @@
 				</div>
 			</div>
 		</form>
-	</div>
 </div>
 <script>
 require(['god/Form'], function(Form){
