@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-17 01:53:54
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-17 02:17:22
          compiled from "templates\user\inform.html" */ ?>
 <?php /*%%SmartyHeaderCode:1505553e5bd9940a309-29018970%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,19 +7,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd156ea7bd8806b76a94024bf1cf2dbed23d0c741' => 
     array (
       0 => 'templates\\user\\inform.html',
-      1 => 1408236240,
+      1 => 1408241840,
       2 => 'file',
     ),
     '523f9d784f5c4917bffb5d11052bfdc1350458b1' => 
     array (
       0 => 'templates\\layout.html',
-      1 => 1407645708,
+      1 => 1408241374,
       2 => 'file',
     ),
     'f32963005522f381d0cff2e8048688c05b6c53fd' => 
     array (
       0 => 'templates\\base.html',
-      1 => 1408240321,
+      1 => 1408241394,
       2 => 'file',
     ),
   ),
@@ -70,7 +70,7 @@ function show_dropmenu(){
 	<div class="top">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-1 col-xs-12">
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<a class="menu-left" href="/"><span
 						class="glyphicon glyphicon-home"></span> 首 页</a> 
 						<span class="noauth">
@@ -94,7 +94,8 @@ function show_dropmenu(){
 <div class="container-fluid">
 
 	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+			
 <script type="text/javascript">
 $(function(){
 	var fm = $("#userinfoform");
@@ -256,11 +257,11 @@ $.ajax({ url: "http://api.jige.olege.com/user",
 							</div>
 			   		</div>
 				</div>
-				<div id = "button">
-				   <button type="button" class="btn btn-primary" style = " width : 120px;">
+				<div id = "ibutton">
+				   <button type="button" class="btn btn-primary" style = " min-width : 120px;">
      				 保存
    					</button>
-   					   <button type="button" class="btn btn-primary" style = " width : 120px;">
+   					   <button type="button" class="btn btn-primary" style = " min-width : 120px;">
      				 取消
   					 </button>
   				</div>
@@ -274,7 +275,8 @@ $.ajax({ url: "http://api.jige.olege.com/user",
 
 
 
-</div>
+
+		</div>
 	</div>
 </div>
 
