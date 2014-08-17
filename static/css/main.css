@@ -268,3 +268,11 @@ table.bookinfo{
 	margin-bottom:-3px;
 	margin-right:5px;
 }
+
+.modal-title{
+	color:#f0ad4e;
+}
+.modal-body h4{
+	color:#428bca;
+}
+
