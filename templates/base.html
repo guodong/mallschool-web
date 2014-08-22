@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-cn" ng-app>
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,13 +23,18 @@
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script data-main="/static/js/main"
 	src="/static/js/require.js"></script>
-	<script type="text/javascript">
+	<script>
+var API_URL = 'http://api.jige.olege.com';
 $(function(){
 	document.getElementById('dropmenu').style.display = "none";
 });
 
 function show_dropmenu(){
 	document.getElementById('dropmenu').style.display = "";
+}
+
+function hide_dropmenu(){
+	document.getElementById('dropmenu').style.display = "none";
 }
 </script>
 </head>
@@ -47,7 +52,7 @@ function show_dropmenu(){
 						</span>
 						<span class="auth pull-right" style="position: relative;">
 							<a href="javascript:show_dropmenu();">昵称 <span class="caret"></span></a>
-							<div id="dropmenu" class="dpd" >
+							<div id="dropmenu" class="dpd" onmouseleave="hide_dropmenu()" >
 								<a href="/user/inform">个人信息</a>
 								<a href="/user/mybooks">我的书籍</a>
 								<a href="/user/collection">我的收藏</a>

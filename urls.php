@@ -11,5 +11,6 @@ $urls = array(
 		'#^/login$#' => 'login',
 		'#^/m/binding\?.*$#' => 'm/binding',
 		'#^/m/sellbook\?.*$#' => 'm/sellbook',
-		'#^/m\?.*$#' => 'm/index'
+		'#^/m\?.*$#' => 'm/index',
+		'#^/aboutus$#' => 'user/aboutus'
 );

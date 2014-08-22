@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 18:39:07
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-22 16:13:39
          compiled from "templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:72383480353e595b1ce08e7-62371894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5d87c4e5f76167a55d354d7a287c7fe661ee9dd0' => 
     array (
       0 => 'templates/index.html',
-      1 => 1407561030,
+      1 => 1408441500,
       2 => 'file',
     ),
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1407580746,
+      1 => 1408694939,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="SHORTCUT ICON" href="/static/images/ico/favicon.ico"> 
 <title>喵校园</title>
 
 <!-- Bootstrap -->
@@ -49,26 +50,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script data-main="/static/js/main"
 	src="/static/js/require.js"></script>
+	<script>
+var API_URL = 'http://api.jige.olege.com';
+$(function(){
+	document.getElementById('dropmenu').style.display = "none";
+});
+
+function show_dropmenu(){
+	document.getElementById('dropmenu').style.display = "";
+}
+</script>
 </head>
 <body>
 
 	<div class="top">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1">
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<a class="menu-left" href="/"><span
 						class="glyphicon glyphicon-home"></span> 首 页</a> 
 						<span class="noauth">
-						<a class="menu-right"
-						href="/login"><span class="glyphicon glyphicon-off"></span> 登
-						陆</a> <a class="menu-right" href="/register"><span
-						class="glyphicon glyphicon-pencil"></span> 注 册</a>
+						<a class="menu-right" href="/login"><span class="glyphicon glyphicon-off"></span> 登陆</a>
+						<a class="menu-right" href="/register"><span class="glyphicon glyphicon-pencil"></span> 注 册</a>
 						</span>
 						<span class="auth pull-right" style="position: relative;">
-							<a>昵称 <span class="caret"></span></a>
-							<div class="dpd" style="position: absolute;z-index: 1;width: 120px;right: 0;background: #949204">
-								<a>个人信息</a>
-								<a>我的书籍</a>
+							<a href="javascript:show_dropmenu();">昵称 <span class="caret"></span></a>
+							<div id="dropmenu" class="dpd" >
+								<a href="/user/inform">个人信息</a>
+								<a href="/user/mybooks">我的书籍</a>
+								<a href="/user/collection">我的收藏</a>
 								<a>退出</a>
 							</div>
 						</span>
@@ -77,33 +87,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 	</div>
 	
-<div class="row">
-	<div class="header"
-		style="background-image: url(/static/images/bg.jpg)">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="logotxt">
-						<h1>
-							<a href="http://www.mallschool.com">MallSchool</a>
-						</h1>
-					</div>
-					<h2 class="text-center">喵校园</h2>
-				</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="header" style="background-image: url(/static/images/bg.png);width:100%">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<img src="/static/images/ico/logo.png" alt=""  /> 
 			</div>
 		</div>
 	</div>
-</div>
-<div class="row" style="text-align: center">
-	<div class="col-md-12">
-		<img src="/static/images/caidan1.jpg" alt="..." class="img-rounded"
-			style="height: 100px; margin: 30px" /> <img
-			src="/static/images/caidan2.jpg" alt="..." class="img-rounded"
-			style="height: 100px; margin: 30px" /> <img
-			src="/static/images/caidan3.jpg" alt="..." class="img-rounded"
-			style="height: 100px; margin: 30px" /> <img
-			src="/static/images/caidan4.jpg" alt="..." class="img-rounded"
-			style="height: 100px; margin: 30px" />
+	<div class="row" style="text-align: center">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<a href="/sb"><img src="/static/images/menu/menu1.png" alt="..." class="img-rounded"	style="height: 100px; margin: 30px" /> </a>
+			<a href="/bb"><img src="/static/images/menu/menu2.png" alt="..." class="img-rounded" 	style="height: 100px; margin: 30px" /> </a>
+			<img src="/static/images/menu/menu3.png" alt="..." class="img-rounded" 	style="height: 100px; margin: 30px" /> 
+			<img src="/static/images/menu/menu4.png" alt="..." class="img-rounded" 	style="height: 100px; margin: 30px" />
+		</div>
 	</div>
 </div>
 
