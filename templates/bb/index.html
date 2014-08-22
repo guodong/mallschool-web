@@ -1,91 +1,9 @@
 ﻿{!extends file='layout.html'!}
 {!block name=main!}
 <script type="text/javascript">
-$(function(){
-	document.getElementById('sellerinfo1').style.display = "none";
-});
-
-function show_sellerinfo(index){
-	var elementname = 'sellerinfo'+index;
-	document.getElementById(elementname).style.display = "";
-}
-
-
-$(function (){
-	$("#searchBook").click(function(){
-		var reg=/^\d{13}|\d{10}$/;
-		var str = $("#bookISBN").val().replace(/ /g,'#');
-		alert(str);
-		if(true || reg.test(str)){
-			$.ajax({ url: API_URL+"/book", 
-			    type : "get", 
-			    data: {type:"123",q:str},
-			    dataType : "json",
-			    success: function(d){
-			    	if(d.result == 0){
-			    		alert(d.data[0].name);
-			    	}
-			    },
-				error:function(d){
-					//document.getElementById('bookinfo').style.display = "none";
-					//document.getElementById('addbook').style.display = "";
-					
-					alert("error");
-				}
-			}); 
-		}
-		else{
-			alert("isbn号不正确");
-		}
-		
-		
-		});
-	});
-	
-/* $(function() {
-    $.ajax({
-            url : 'http://api.jige.olege.com/secondhand/getAll',
-            data: {id: '000000000000000000000000'},
-            async: false,
-            success : function(d) {
-                    for(var i in d.data){
-                    		
-                            var item = d.data[i];
-                            var prc = item.price;
-                            var time = item.time;
-                            var sid = item.sellerid;
-                            $.ajax({
-                                    url: 'http://api.jige.olege.com/book/get',
-                                    data: {type: 'id', q: item.bookid},
-                                    async: false,
-                                    success: function(dd){
-                                            $.ajax({
-                                                    url: 'http://api.jige.olege.com/user',
-                                                    data: {id: sid},
-                                                    async: false,
-                                                    success: function(ddd){
-                                                            var vars = dd.data;
-                                                            vars.price = prc;
-                                                            var newDate = new Date(parseInt(time));
-                                                            vars.time = newDate.getFullYear()+"-"+(newDate.getMonth()+1)+"-"+newDate.getDate();
-
-                                                            vars.user = ddd.data
-                                                            var tmp = tmpl($("#book-tpl").html(),vars);
-                                                            $("#book-list"+i%4).append(tmp);
-                                                            
-                                                    }
-                                            });
-                                    }
-                            });
-                    }
-            }
-    })
+require(['view/bb/Sells'], function(vSells){
+	var sls = new vSells();
 })
- */
-	
-	
-	
-	
 </script>
 <div class="row">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12">
@@ -95,9 +13,9 @@ $(function (){
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 						<div class="input-group">
 							<input type="text" class="form-control" placeholder="寻找书籍"  id="bookISBN">
-							<span class="input-group-addon"> <span
+							<a class="input-group-addon"> <span
 								class="glyphicon glyphicon-search" id="searchBook"></span>
-							</span>
+							</a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-top: 5px;">
@@ -111,141 +29,18 @@ $(function (){
 		</div>
 
 		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="book-list0">
-				<div class="panel panel-default booklistbox"  >
-					<div class="panel-body">
-						<img src="/static/images/book.jpg" alt="" class="pic" />
-						<strong class="booktitile">练习一个人</strong>
-						<span class="glyphicon glyphicon-book"></span>
-						<table class="bookinfo">
-							<tr>
-								<td class="title">作者</td>
-								<td>陶立夏 著</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>江苏文艺出版社</td>
-							</tr>
-							<tr>
-								<td class="title">ISBN</td>
-								<td>9787539974033</td>
-							</tr>
-							<tr>
-								<td class="title">售价</td>
-								<td class="price"><strong>￥27.50</strong></td>
-							</tr>
-						</table>
-						<div class="media">
-							<a class="pull-left" href="#"> <img class="media-object"
-								src="/static/images/head.jpg" alt="..."
-								style="width: 30px; margin-top: 4px;">
-							</a>
-							<div class="media-body">
-								<a class="media-heading">白天不懂夜的黑</a>
-								<br /> <span>2014-07-14</span>
-								<a class="collect" sell_id="123456789012345678901234" style="cursor: pointer;">收藏</a>
-								<a class="dropsellerinfo" href="javascript:show_sellerinfo(1);"><span class="glyphicon glyphicon-chevron-down"></span></a> 
-							</div>
-						</div>
-						<div id="sellerinfo1" class="sellerinfo">
-							<div	style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
-							<p>卖家信息</p>
-							<p>微信：123456789</p>
-							<p>手机：13812345678</p>
-						</div>
-					</div>
-				</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" id="book-list0">
+				
 			</div>
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="book-list1">
-				<div class="panel panel-default booklistbox"  >
-					<div class="panel-body">
-						<img src="/static/images/book.jpg" alt="" class="pic" />
-						<strong class="booktitile">练习一个人</strong>
-						<span class="glyphicon glyphicon-book"></span>
-						<table class="bookinfo">
-							<tr>
-								<td class="title">作者</td>
-								<td>陶立夏 著</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>江苏文艺出版社</td>
-							</tr>
-							<tr>
-								<td class="title">ISBN</td>
-								<td>9787539974033</td>
-							</tr>
-							<tr>
-								<td class="title">售价</td>
-								<td class="price"><strong>￥27.50</strong></td>
-							</tr>
-						</table>
-						<div class="media">
-							<a class="pull-left" href="#"> <img class="media-object"
-								src="/static/images/head.jpg" alt="..."
-								style="width: 30px; margin-top: 4px;">
-							</a>
-							<div class="media-body">
-								<a class="media-heading">白天不懂夜的黑</a>
-								<br /> <span>2014-07-14</span>
-								<a class="collect" sell_id="123456789012345678901234" style="cursor: pointer;">收藏</a>
-								<a class="dropsellerinfo" href="javascript:show_sellerinfo(1);"><span class="glyphicon glyphicon-chevron-down"></span></a> 
-							</div>
-						</div>
-						<div id="sellerinfo1" class="sellerinfo">
-							<div	style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
-							<p>卖家信息</p>
-							<p>微信：123456789</p>
-							<p>手机：13812345678</p>
-						</div>
-					</div>
-				</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" id="book-list1">
+				
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" id="book-list2">
+				
 			</div>
 			
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6"  id="book-list3">
-				<div class="panel panel-default booklistbox"  >
-					<div class="panel-body">
-						<img src="/static/images/book.jpg" alt="" class="pic" />
-						<strong class="booktitile">练习一个人</strong>
-						<span class="glyphicon glyphicon-book"></span>
-						<table class="bookinfo">
-							<tr>
-								<td class="title">作者</td>
-								<td>陶立夏 著</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>江苏文艺出版社</td>
-							</tr>
-							<tr>
-								<td class="title">ISBN</td>
-								<td>9787539974033</td>
-							</tr>
-							<tr>
-								<td class="title">售价</td>
-								<td class="price"><strong>￥27.50</strong></td>
-							</tr>
-						</table>
-						<div class="media">
-							<a class="pull-left" href="#"> <img class="media-object"
-								src="/static/images/head.jpg" alt="..."
-								style="width: 30px; margin-top: 4px;">
-							</a>
-							<div class="media-body">
-								<a class="media-heading">白天不懂夜的黑</a>
-								<br /> <span>2014-07-14</span>
-								<a class="collect" sell_id="123456789012345678901234" style="cursor: pointer;">收藏</a>
-								<a class="dropsellerinfo" href="javascript:show_sellerinfo(1);"><span class="glyphicon glyphicon-chevron-down"></span></a> 
-							</div>
-						</div>
-						<div id="sellerinfo1" class="sellerinfo">
-							<div	style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
-							<p>卖家信息</p>
-							<p>微信：123456789</p>
-							<p>手机：13812345678</p>
-						</div>
-					</div>
-				</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6"  id="book-list3">
+				
 			</div>
 		</div>
 	</div>

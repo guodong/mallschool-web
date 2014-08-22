@@ -6,7 +6,9 @@ define([ 'backbone' ], function(Backbone) {
 			name : "",
 		},
 		parse: function(d){
-			return d.data;
+			if(d.result != undefined && d.data != undefined)
+				return d.data;
+			return d;
 		}
 	})
 });

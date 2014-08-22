@@ -1,0 +1,43 @@
+<div class="panel panel-default booklistbox">
+	<div class="panel-body">
+		<img src="/static/images/book.jpg" alt="" class="pic" /> <strong
+			class="booktitile" max="8" attr="strlmt" title="<%=book.name%>"><%=book.name%></strong>
+		<span class="glyphicon glyphicon-book"></span>
+		<table class="bookinfo">
+			<tr>
+				<td class="title">作者</td>
+				<td max="6" attr="strlmt" title="<%=book.author%>"><%=book.author%></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><%=book.press%></td>
+			</tr>
+			<tr>
+				<td class="title">ISBN</td>
+				<td><%=book.isbn%></td>
+			</tr>
+			<tr>
+				<td class="title">售价</td>
+				<td class="price"><strong>￥<%=sell.price%></strong></td>
+			</tr>
+		</table>
+		<div class="media">
+			<a class="pull-left" href="#"> <img class="media-object"
+				src="/static/images/head.jpg" alt="..."
+				style="width: 30px; margin-top: 4px;">
+			</a>
+			<div class="media-body">
+				<a class="media-heading"><%=seller.name%></a> <br /> <span><%=sell.time%></span>
+				<a class="collect" sell_id="<%=sell.id%>" style="cursor: pointer;">收藏</a>
+				<a class="dropsellerinfo"><span
+					class="glyphicon glyphicon-chevron-down togo-icon"></span></a>
+			</div>
+		</div>
+		<div class="sellerinfo dpn">
+			<div
+				style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
+			<p>卖家联系方式</p>
+			<p><%=sell.contact%></p>
+		</div>
+	</div>
+</div>
