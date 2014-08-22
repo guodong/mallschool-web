@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-22 16:13:39
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-22 23:00:54
          compiled from "templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:72383480353e595b1ce08e7-62371894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5d87c4e5f76167a55d354d7a287c7fe661ee9dd0' => 
     array (
       0 => 'templates/index.html',
-      1 => 1408441500,
+      1 => 1408719534,
       2 => 'file',
     ),
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1408694939,
+      1 => 1408719534,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_53e595b1d0ffc3_67876664')) {function content_53e595b1d0ffc3_67876664($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-cn" ng-app>
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -51,13 +51,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <script data-main="/static/js/main"
 	src="/static/js/require.js"></script>
 	<script>
-var API_URL = 'http://api.jige.olege.com';
+	var API_URL = 'http://api.jige.olege.com';
+	//var API_URL = 'http://api.jige.la.me';
 $(function(){
 	document.getElementById('dropmenu').style.display = "none";
 });
 
 function show_dropmenu(){
 	document.getElementById('dropmenu').style.display = "";
+}
+
+function hide_dropmenu(){
+	document.getElementById('dropmenu').style.display = "none";
 }
 </script>
 </head>
@@ -75,7 +80,7 @@ function show_dropmenu(){
 						</span>
 						<span class="auth pull-right" style="position: relative;">
 							<a href="javascript:show_dropmenu();">昵称 <span class="caret"></span></a>
-							<div id="dropmenu" class="dpd" >
+							<div id="dropmenu" class="dpd" onmouseleave="hide_dropmenu()" >
 								<a href="/user/inform">个人信息</a>
 								<a href="/user/mybooks">我的书籍</a>
 								<a href="/user/collection">我的收藏</a>
@@ -100,7 +105,7 @@ function show_dropmenu(){
 			<a href="/sb"><img src="/static/images/menu/menu1.png" alt="..." class="img-rounded"	style="height: 100px; margin: 30px" /> </a>
 			<a href="/bb"><img src="/static/images/menu/menu2.png" alt="..." class="img-rounded" 	style="height: 100px; margin: 30px" /> </a>
 			<img src="/static/images/menu/menu3.png" alt="..." class="img-rounded" 	style="height: 100px; margin: 30px" /> 
-			<img src="/static/images/menu/menu4.png" alt="..." class="img-rounded" 	style="height: 100px; margin: 30px" />
+			<a href="/aboutus"><img src="/static/images/menu/menu4.png" alt="..." class="img-rounded" 	style="height: 100px; margin: 30px" /> </a>
 		</div>
 	</div>
 </div>
