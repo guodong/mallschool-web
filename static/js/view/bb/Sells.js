@@ -20,6 +20,16 @@ define([ 'backbone', 'text!tpl/favorite.html', 'collection/Sells',
 				$(this).parents(".media").siblings(".sellerinfo").toggle();
 				$(this).toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up")
 				
+			});
+			view.$el.find(".collect").click(function(){
+				$.ajax({
+					url: API_URL+'/user/favorite',
+					type: 'post',
+					data: {user_id: '123456789012345678901234', sell_id: $(this).attr("sell_id")},
+					success: function(d){
+						alert('收藏成功');
+					}
+				})
 			})
 		},
 		resetAll: function(){

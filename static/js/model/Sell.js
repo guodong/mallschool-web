@@ -5,6 +5,7 @@ define([ 'backbone' ], function(Backbone) {
 			id : "",
 			book_id : "",
 			seller_id: '',
+			status: 0
 		},
 		parse: function(d){
 			if(d.result != undefined && d.data != undefined)
