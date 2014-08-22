@@ -24,6 +24,7 @@ function search_book(){
 		$.ajax({ url: "http://api.jige.olege.com/book", 
 		    type : "get", 
 		    data: {q:$("#book-ISBN").val(),type:"ISBN"},
+		    dataType : "json",
 		    success: function(d){
 		    	if(d.result == 0){
 		    		document.getElementById('bookinfo').style.display = "";
