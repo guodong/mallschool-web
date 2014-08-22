@@ -14,24 +14,23 @@ function show_sellerinfo(index){
 $(function (){
 	$("#searchBook").click(function(){
 		var reg=/^\d{13}|\d{10}$/;
-		alert($("#bookISBN").val());
-		if(true || reg.test($("#bookISBN").val())){
-			
-			$.ajax({ url: "http://api.jige.olege.com/book", 
+		var str = $("#bookISBN").val().replace(/ /g,'#');
+		alert(str);
+		if(true || reg.test(str)){
+			$.ajax({ url: API_URL+"/book", 
 			    type : "get", 
-			    data: {q:$("#bookISBN").val(),type:"123"},
+			    data: {type:"123",q:str},
 			    dataType : "json",
 			    success: function(d){
-			    	alert(d);
 			    	if(d.result == 0){
-			    		alert(d.data.name);
+			    		alert(d.data[0].name);
 			    	}
 			    },
 				error:function(d){
 					//document.getElementById('bookinfo').style.display = "none";
 					//document.getElementById('addbook').style.display = "";
-				
-					alert(d);
+					
+					alert("error");
 				}
 			}); 
 		}
@@ -43,13 +42,12 @@ $(function (){
 		});
 	});
 	
-$(function() {
+/* $(function() {
     $.ajax({
             url : 'http://api.jige.olege.com/secondhand/getAll',
             data: {id: '000000000000000000000000'},
             async: false,
             success : function(d) {
-            		alert(d);
                     for(var i in d.data){
                     		
                             var item = d.data[i];
@@ -83,7 +81,7 @@ $(function() {
             }
     })
 })
-
+ */
 	
 	
 	
