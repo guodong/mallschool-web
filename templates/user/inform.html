@@ -5,7 +5,7 @@ $(function(){
 	var fm = $("#userinfoform");
 	fm.find("[type=button]").click(function(){
 		$.ajax({ url: "http://api.jige.olege.com/user", 
-			type : "post",
+			type : "put",
 			context: document.body, 
 			data: {id :"53ca2535badeb81003d63af2"},
 			success: function(){
@@ -27,7 +27,7 @@ $.ajax({ url: "http://api.jige.olege.com/user",
 	data: {id :"53ca2535badeb81003d63af2"},
 	success: function(d){
    		alert(d);
-   		data = JSON.parse(d);
+   		data = d;
    		var realname = $("#realname");
    		realname.val(data.data.realname);
    		var id = $("#id");

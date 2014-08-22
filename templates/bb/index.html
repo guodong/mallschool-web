@@ -66,7 +66,7 @@ function show_sellerinfo(index){
 							<div class="media-body">
 								<a class="media-heading">白天不懂夜的黑</a>
 								<br /> <span>2014-07-14</span>
-								<a class="collect">收藏</a>
+								<a class="collect" sell_id="123456789012345678901234" style="cursor: pointer;">收藏</a>
 								<a class="dropsellerinfo" href="javascript:show_sellerinfo(1);"><span class="glyphicon glyphicon-chevron-down"></span></a> 
 							</div>
 						</div>
@@ -88,4 +88,18 @@ function show_sellerinfo(index){
 		</div>
 	</div>
 </div>
+<script>
+$(function(){
+	$(".collect").click(function(){
+		$.ajax({
+			url: API_URL+'/user/favorite',
+			type: 'post',
+			data: {user_id: '123456789012345678901234', sell_id: $(this).attr("sell_id")},
+			success: function(d){
+				alert('收藏成功');
+			}
+		})
+	})
+})
+</script>
 {!/block!}
