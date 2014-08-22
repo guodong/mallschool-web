@@ -16,11 +16,11 @@ define([ 'backbone', 'text!tpl/favorite.html', 'collection/Sells',
 				if(sell.get("status") == 0){
 					sell.set("status", 1);
 					sell.save();
-					view.$el.find("button").html("已出售").removeClass("btn-info").addClass("btn-warning");
+					view.$el.find("button").html("已出售");
 				}else{
 					sell.set("status", 0);
 					sell.save();
-					view.$el.find("button").html("未出售").addClass("btn-info").removeClass("btn-warning");
+					view.$el.find("button").html("未出售");
 				}
 			})
 		},

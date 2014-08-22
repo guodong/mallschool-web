@@ -19,7 +19,7 @@ define([ 'backbone', 'text!tpl/mybook.html', 'model/Book', 'model/Sell', 'model/
 					return this;
 				},
 				initialize : function() {
-					//this.listenTo(this.model, 'change', this.render);
+					this.listenTo(this.model, 'change', this.render);
 				}
 			})
 		});

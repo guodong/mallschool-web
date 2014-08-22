@@ -4,11 +4,20 @@ define([ 'backbone' ], function(Backbone) {
 		defaults : {
 			id : "",
 			email : "",
+			nickname: "",
 		},
 		parse: function(d){
 			if(d.result != undefined && d.data != undefined)
 				return d.data;
 			return d;
+		},
+		getFromSession: function(){
+			this.fetch({
+				url: '/session.php',
+				data: {
+					action: 'get'
+				}
+			})
 		}
 	})
 });

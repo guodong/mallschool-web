@@ -33,7 +33,7 @@
 
 </div>
 <script>
-	require([ 'god/Form' ], function(Form) {
+	require([ 'god/Form', 'model/User' ], function(Form, mUser) {
 		var fm = new Form({
 			id : 'logform',
 			invalidElementCallback : function(elem) {
@@ -42,16 +42,16 @@
 			validElementCallback : function(elem) {
 				elem.dom.parents(".form-group").removeClass("has-error");
 			},
-			submitCallback : function(d) {alert(JSON.stringify(d))
-				var data = d;//jQuery.parseJSON(d);
+			submitCallback : function(d) {
 				if (d.result == 0) {
+					if(d.data.id == 0){
+						alert("邮箱或者密码错误");
+						return;
+					}
 					$.ajax({
 						url : '/session.php',
 						type : 'post',
-						data : {
-							email : $("#logemail").val(),
-							password : $("#logpasswd").val(),
-						},
+						data : {action: 'set', data: d.data},
 						success : function() {
 							location.href = '/';
 						}

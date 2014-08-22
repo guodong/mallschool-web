@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-22 23:00:54
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 05:46:09
          compiled from "templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:72383480353e595b1ce08e7-62371894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1408719534,
+      1 => 1408743968,
       2 => 'file',
     ),
   ),
@@ -32,13 +32,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<link rel="SHORTCUT ICON" href="/static/images/ico/favicon.ico"> 
+<link rel="SHORTCUT ICON" href="/static/images/ico/favicon.ico">
 <title>喵校园</title>
 
 <!-- Bootstrap -->
 <link
 	href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css"
 	rel="stylesheet">
+<link href="/static/css/lib.css" rel="stylesheet">
 <link href="/static/css/main.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
@@ -48,48 +49,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script data-main="/static/js/main"
-	src="/static/js/require.js"></script>
-	<script>
+<script data-main="/static/js/main" src="/static/js/require.js"></script>
+<script>
 	var API_URL = 'http://api.jige.olege.com';
 	//var API_URL = 'http://api.jige.la.me';
-$(function(){
-	document.getElementById('dropmenu').style.display = "none";
-});
-
-function show_dropmenu(){
-	document.getElementById('dropmenu').style.display = "";
-}
-
-function hide_dropmenu(){
-	document.getElementById('dropmenu').style.display = "none";
-}
+	var UID = "53ca235ebadeb80e03d63af1";
+require(['view/Top'], function(vTop){
+	var vt = new vTop();
+/* 	var user = new mUser();
+	user.getFromSession();
+	window.user = user;
+	window.UID = user.get("id");
+	if(user.get("id")){
+		
+	} */
+})
 </script>
 </head>
 <body>
 
 	<div class="top">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-					<a class="menu-left" href="/"><span
-						class="glyphicon glyphicon-home"></span> 首 页</a> 
-						<span class="noauth">
-						<a class="menu-right" href="/login"><span class="glyphicon glyphicon-off"></span> 登陆</a>
-						<a class="menu-right" href="/register"><span class="glyphicon glyphicon-pencil"></span> 注 册</a>
-						</span>
-						<span class="auth pull-right" style="position: relative;">
-							<a href="javascript:show_dropmenu();">昵称 <span class="caret"></span></a>
-							<div id="dropmenu" class="dpd" onmouseleave="hide_dropmenu()" >
-								<a href="/user/inform">个人信息</a>
-								<a href="/user/mybooks">我的书籍</a>
-								<a href="/user/collection">我的收藏</a>
-								<a>退出</a>
-							</div>
-						</span>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 	
 <div class="container-fluid">
@@ -110,10 +90,6 @@ function hide_dropmenu(){
 	</div>
 </div>
 
-<script>
-$(function(){
-	
-})
-</script>
+
 </body>
 </html><?php }} ?>
