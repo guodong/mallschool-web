@@ -3,14 +3,14 @@
 <div class="row" style="margin: 30px;">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12 ">
 		<span class="glyphicon glyphicon-envelope"></span> 邮箱注册
-		<span style="float: right;">已有账号？<a href="login" style="color: red">登录》</a></span>
+		<span style="float: right;">已有账号？<a href="login" style="color: red">立刻登录</a></span>
 	</div>
 	<div class="col-md-10 col-md-offset-1"
 		style="height: 1px; margin-top: 10px; background-color: #D5D5D5; overflow: hidden;">
 	</div>
 </div>
 <div class="row" 	style="margin-top: 40px; ">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12 ">
 		<form class="form-horizontal regform" id="regform" role="form" isAjax="true" action="http://api.jige.olege.com/user" method="post">
 			<div class="form-group">
 				<p class="col-lg-2 col-md-2 col-sm-2 col-xs-12 control-label" >邮箱</p>
@@ -19,7 +19,7 @@
 						id="regemail" placeholder="Email"> 
 						<span class="help-block">使用edu邮箱注册，会得到更多权限</span>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-11">
 					<div class="alert alert-info" role="alert">
 						<img src="/static/images/alart.jpg" class="alartimg" />
 						 用于登录和找回密码，不会公开
@@ -32,7 +32,7 @@
 					<input type="password" name='password' class="form-control" regex="^\S{6,}$"
 						id="passwd" placeholder="password">
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-11">
 					<div class="alert alert-info" role="alert">
 						<img src="/static/images/alart.jpg" class="alartimg" />
 						&nbsp6-12字符，可使用字母、数字以及符号的任意组合
@@ -45,7 +45,7 @@
 					<input type="password" class="form-control" id="repasswd" regex="^\S{6,}$"
 						placeholder="password">
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-11">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-11">
 					<div class="alert alert-info" role="alert">
 						<img src="/static/images/alart.jpg" class="alartimg" />
 						&nbsp请再次输入确认密码
@@ -78,8 +78,56 @@
 					<button type="submit" class="btn btn-primary">同意以下协议并注册</button>
 					<br />
 					<p style="margin-top: 10px">
-						<a href="#" alt="">《用户协议》</a>
+						<a data-toggle="modal" data-target="#myModal">
+						  《用户协议》
+						</a>
 					</p>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">喵校园（www.mallschool.com）用户协议</h4>
+      </div>
+      <div class="modal-body">
+		<p>喵校园（www.mallschool.com）仅提供发布或获取书籍交易信息的服务。个人、公司以及因其他任何目的进入本网站的访问者接受本协议书条款，注册成为企业会员，并遵守本协议所述之条款使用本网站所提供之服务。如果你不接受本声明之条款，请勿使用本网站。接受本声明之条款，你将遵守本协议之规定。</p>
+		<h4>1.个人用户</h4>
+		<p>个人用户必须同意使用本网站只可用于合法的目的——发布或获取书籍交易信息。</p>
+		<h4>2.注册信息使用</h4>
+		<p>注册会员所提供的个人资料将会被喵校园（www.mallschool.com）统计、汇总，在我们的严格管理下，为喵校园（www.mallschool.com）的广告商及合作者提供依据。喵校园（www.mallschool.com）会不定期地通过注册会员留下的电子邮件同该会员保持联系。</p>
+		<p>喵校园（www.mallschool.com）承诺：在未经访问者授权同意的情况下，喵校园（www.mallschool.com）不会将访问者的个人资料泄露给第三方。但以下情况除外。</p>
+		<ol>
+			<li>根据执法单位之要求或为公共之目的向相关单位提供个人资料；</li>
+			<li>由于你将用户密码告知他人或与他人共享注册帐户，由此导致的任何个人资料泄露；</li>
+			<li>由于计算机黑客攻击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营之不可抗力而造成的个人资料泄露、丢失、被盗用或被窜改等；</li>
+			<li>由于与喵校园（www.mallschool.com）链接的其他网站所造成之个人资料泄露及由此而导致的任何法律争议和后果；</li>
+			<li>为免除访问者在生命、身体或财产方面之急迫危险。</li>
+		</ol>
+		<h4>3.信息的准确性</h4>
+		<p>用户须独自对登记在本网站上及其他链接页面上的内容正确性负责。</p>
+		<p>本网站将不能保证所有由第三方提供的信息，或本网站自行采集的信息完全准确。用户了解，对这些信息的使用，需要经过进一步核实。本网站对访问者未经自行核实误用本网站信息造成的任何损失不予承担任何责任。</p>
+		<h4>4.明确的禁止使用</h4>
+		<p>喵校园（www.mallschool.com）只能用于合法目的。喵校园（www.mallschool.com）明确禁止任何其他用途，并要求所有使用者同意不用于下列任何一种用途：</p>
+		<ol>
+			<li>在书籍交易信息中心公布不完整、虚假或不准确的信息资料。</li>
+			<li>公布不是书籍交易的资料，如意见、通知、商业广告或其他非相关内容。</li>
+			<li>除发布者外，删除或修改其他个人或公司公布的资料。</li>
+			<li>擅自打印、复制或以其他方式使用任何个人资料或有关企业的商业信息。 </li>
+		</ol>
+		<h4>5.风险分担</h4>
+		<p>用户理解并同意，本网站在本合同项下的义务是为用户提供发布书籍交易信息，或获取由他人登记的书籍交易信息的互联网软件平台服务，而非提供信息本身，因此任何用户使用本系统将可能承担以下风险：本系统的信息按"信息提供当时之现状"提供，本网站对信息不作任何明示的或暗示的保证。本网站不能保证信息的特殊目的不受阻挠或不出错误、不能保证错误一定能得到纠正，也不能保证本系统或制成本系统的信息不会含有病毒或其他有害成分。在涉及有关信息的使用或使用结果方面，本网站对信息的正确性、准确性、可靠性及其他同时不作出任何保证或说明。用户(而不是喵校园（www.mallschool.com）)将承担因此而造成的一切必要的服务、修补和改正费用，除非现行的法律法规另有明文规定。</p>
+		<h4>6.不可抗力</h4>
+		<p>由于地震、台风、战争、罢工、政府行为、非因各方原因发生的火灾、基础电信网络意外中断造成的及其它不能预见并且对其发生和后果不能防止或避免的不可抗力原因，致使任何一方不能履行其在本协议项下的义务，该方不承担由此给另一方造成的损失，按不可抗力原因对本协议的影响程度，双方协商是否终止本协议，免除或部分免除本协议的义务。</p>
+		<h4>7.适用法律和管辖权限条款</h4>
+		<p>本协议服从中华人民共和国法律解释；用户与本网站双方都必须遵守中华人民共和国的司法管辖。如发生本协议相关条款与中华人民共和国法律相抵触时，则该条款将按相关法律重新解释，而其他条款则依旧保持对用户产生法律效力和影响。</p>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
 				</div>
 			</div>
 		</form>
