@@ -11,40 +11,13 @@
 </div>
 <script>
 
-	require([ 'collection/Favorites' ], function(Favorites) {
-		var favs = new Favorites();
-		favs.fetch({
-			data : $.param({
-				user_id : "123456789012345678901234"
-			})
-		});
+	require([ 'view/user/Favorites' ], function(vFavorates) {
+		var vf = new vFavorates();
 	})
 </script>
 <div class="row">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 mybookbox" ng-controller="PhoneListCtrl">
-		<div class="row bookinbox2" >
-			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3" >
-				<img src="/static/images/book.jpg" alt="" class="pic" style="height:100%;width:100%;max-width: 80px" />
-			</div>
-			<div class="col-lg-7 col-md-7 col-sm-6 col-xs-6">
-				<p class="booktitle">
-					<span >这是一个标题</span>
-				</p>
-				<p class="price" > 
-					<span class="search_now_price">&yen;41.30</span>
-					<span class="search_pre_price">&yen;49.80</span>
-					<span class="search_discount">&nbsp;(8.3折) </span>
-				</p>
-				<p class="search_book_author">
-				<span>明日科技　编著</span>
-				<span > /2012-09-01</span>
-				<span>  /清华大学出版社</span>
-				</p>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				<button type="button" class="btn btn-info flagsold  btn-block" >取消收藏</button>
-			</div>
-		</div>
+	<div id="fav-list" class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 mybookbox" ng-controller="PhoneListCtrl">
+		
 	</div>
 </div>
 <script>

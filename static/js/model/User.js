@@ -1,9 +1,9 @@
 define([ 'backbone' ], function(Backbone) {
 	return Backbone.Model.extend({
-		url : API_URL + '/book',
+		url : API_URL + '/user',
 		defaults : {
 			id : "",
-			name : "",
+			email : "",
 		},
 		parse: function(d){
 			return d.data;

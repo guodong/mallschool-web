@@ -1,4 +1,5 @@
 .settings
 .project
-templates_c
 *.conf
+templates_c/*
+templates_c/*.file.index.html.php
