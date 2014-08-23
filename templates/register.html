@@ -157,6 +157,9 @@ require(['god/Form'], function(Form){
 						location.href = '/user/firstlogin';
 					}
 				});
+			}else if(d.result == 1005){
+				alert('该邮箱已被注册！');
+				return false;
 			}
 		},
 		onSubmit: function(){
