@@ -19,6 +19,9 @@ define([ 'backbone', 'text!tpl/sell.html', 'model/Book', 'model/Sell', 'model/Us
 						},
 						async : false
 					});
+					if(!book.get("imgpath")){
+						book.set("imgpath", "/static/images/book/defaultbook.png");
+					}
 					var data = new Object();
 					data.book = book.toJSON();
 					data.sell = this.model.toJSON();
