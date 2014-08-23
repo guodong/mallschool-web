@@ -16,7 +16,8 @@ define([ 'backbone' ], function(Backbone) {
 				url: '/session.php',
 				data: {
 					action: 'get'
-				}
+				},
+				async: false
 			})
 		}
 	})

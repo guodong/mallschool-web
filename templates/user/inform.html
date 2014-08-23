@@ -1,48 +1,45 @@
 {!extends file='layout.html'!}
 {!block name=main!}
 <script type="text/javascript">
-$(function(){
+require(['model/User'], function(mUser) {
+	var muser = new mUser;
+	muser.getFromSession();
 	var fm = $("#userinfoform");
 	fm.find("[type=button]").click(function(){
+		var f = $("#userinfoform");
 		$.ajax({ url: "http://api.jige.olege.com/user", 
 			type : "PUT",
-			context: document.body, 
-			data: {id :"53ca2535badeb81003d63af2"},
+			data: {id : muser.get("id"), nickname: $("#nickname").val(), college: $("#college").val(), qq: $("#qq").val(), place: $("#place").val()},
 			success: function(){
-				alert("success");
+				alert("修改成功");
 			},
 			error:function(){
 				alert("error");
 			}
 		});
 	});
-})
+	$.ajax({
+		url: API_URL+'/user',
+		type : "get",
+		data: {id :muser.get("id")},
+		dataType:"json",
+		success: function(data){
+	   		var realname = $("#nickname");
+	   		realname.val(data.data.nickname);
+	   		var id = $("#tel");
+	   		id.val(data.data.tel);
+	   		var school = $("#place");
+	   		school.val(data.data.place);
+	   		var qq = $("#qq");
+	   		qq.val(data.data.qq);
+	   		var email = $("#email");
+	   		email.val(data.data.email);
+		}}
+	);
+});
 
 
 
-
-$.ajax({ url: "http://api.jige.olege.com/user", 
-	type : "get",
-	context: document.body, 
-	data: {id :"53ca2535badeb81003d63af2"},
-	dataType:"json",
-	success: function(d){
-   		alert(d);
-   		data = d;
-   		var realname = $("#realname");
-   		realname.val(data.data.realname);
-   		var id = $("#id");
-   		id.val(data.data.id);
-   		var school = $("#school");
-   		school.val(data.data.school);
-   		var qq = $("#qq");
-   		qq.val(data.data.qq);
-   		var wechat = $("#wechat");
-   		wechat.html(data.data.wechat);
-   		var email = $("#email");
-   		email.val(data.data.email);
-	}}
-);
 
 </script>
 
@@ -70,7 +67,7 @@ $.ajax({ url: "http://api.jige.olege.com/user",
 				   			<label  class="control-label title">昵称</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<input type="text" class="control-label" id="realname"/>
+				      		<input type="text" class="control-label" id="nickname"/>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -81,7 +78,7 @@ $.ajax({ url: "http://api.jige.olege.com/user",
 				   			<label  class="control-label title">院校</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<input type="text" class="control-label" id="school"/>
+				      		<input type="text" class="control-label" id="college"/>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
@@ -125,7 +122,7 @@ $.ajax({ url: "http://api.jige.olege.com/user",
 				   			<label  class="control-label title">交易地</label>
 				   		</div>
 				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
-				      		<input type="text" class="control-label" id="loc"/>
+				      		<input type="text" class="control-label" id="place"/>
 				   		</div>
 				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"  
 							style="height: 1px; margin-top: 3px; background-color: #D5D5D5; overflow: hidden;"></div>
