@@ -1,6 +1,95 @@
 {!extends file='layout.html'!}
 {!block name=main!}
 <script type="text/javascript">
+
+require(['model/User'], function(mUser) {
+	var muser = new mUser;
+	var bookid;
+	muser.getFromSession();
+	var fm = $("#userinfoform");
+	fm.find("#submit").click(function(){
+		var reg = /^\S{24}$/;
+		if(!reg.test(bookid)){
+			alert("请在step1完成图书确认");
+			return;
+		}
+		var f = $("#userinfoform");
+		$.ajax({ url: "http://api.jige.olege.com/sell", 
+			type : "POST",
+			data: {
+				seller_id : muser.get("id"),
+				book_id:bookid,
+				price:$("#price").val(),
+				college:$("#college").val(),
+				contact:$("#contact").val(),
+				des:$("#describe").val(),
+				},
+			success: function(){
+				alert("修改成功");
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	});
+	$.ajax({
+		url: API_URL+'/user',
+		type : "get",
+		data: {id :muser.get("id")},
+		dataType:"json",
+		success: function(data){
+	   		var realname = $("#nickname");
+	   		realname.val(data.data.nickname);
+	   		var id = $("#tel");
+	   		id.val(data.data.tel);
+	   		var school = $("#place");
+	   		school.val(data.data.place);
+	   		var qq = $("#qq");
+	   		qq.val(data.data.qq);
+	   		var email = $("#email");
+	   		email.val(data.data.email);
+		}}
+	);
+	
+	fm.find("#searchbook").click(function(){
+		var reg=/^\d{13}|\d{10}$/;
+		if(reg.test($("#book-ISBN").val())){
+			
+			$.ajax({ url: "http://api.jige.olege.com/book", 
+			    type : "get", 
+			    data: {q:$("#book-ISBN").val(),type:"ISBN"},
+			    dataType : "json",
+			    success: function(d){
+			    	if(d.result == 0){
+			    		document.getElementById('bookinfo').style.display = "";
+			    		document.getElementById('addbook').style.display = "none";
+				    	$("#book-name").text("书名："+d.data.name); 
+				    	$("#book-author").text("作者："+d.data.author);
+				    	$("#book-press").text("出版社："+d.data.press);
+				    	$("#book-p").text("定价："+d.data.fixedPrice);
+				    	$("#book-isbn2").text("ISBN："+d.data.isbn);
+				    	bookid = d.data.id;
+				    	alert(bookid);
+			    	}
+			    },
+				error:function(){
+					document.getElementById('bookinfo').style.display = "none";
+					document.getElementById('addbook').style.display = "";
+				}
+			}); 
+		}
+		else{
+			alert("isbn号不正确");
+		}
+	});
+
+	
+});
+
+
+
+
+
 $(function(){
 	document.getElementById('bookinfo').style.display = "none";
 	document.getElementById('addbook').style.display = "none";
@@ -16,35 +105,6 @@ function show_bookdetail(){
         $("#detail-status").html('<span  class="glyphicon glyphicon-chevron-down"></span>展开详细页面');
     }
 
-}
-function search_book(){
-	var reg=/^\d{13}|\d{10}$/;
-	if(reg.test($("#book-ISBN").val())){
-		
-		$.ajax({ url: "http://api.jige.olege.com/book", 
-		    type : "get", 
-		    data: {q:$("#book-ISBN").val(),type:"ISBN"},
-		    dataType : "json",
-		    success: function(d){
-		    	if(d.result == 0){
-		    		document.getElementById('bookinfo').style.display = "";
-		    		document.getElementById('addbook').style.display = "none";
-			    	$("#book-name").text("书名："+d.data.name); 
-			    	$("#book-author").text("作者："+d.data.author);
-			    	$("#book-press").text("出版社："+d.data.press);
-			    	$("#book-p").text("定价："+d.data.fixedPrice);
-			    	$("#book-isbn2").text("ISBN："+d.data.isbn);
-		    	}
-		    },
-			error:function(){
-				document.getElementById('bookinfo').style.display = "none";
-				document.getElementById('addbook').style.display = "";
-			}
-		}); 
-	}
-	else{
-		alert("isbn号不正确");
-	}
 }
 
 </script>
@@ -75,7 +135,7 @@ function search_book(){
 				      		<input type="text" class="form-control" placeholder="填写ISBN，搜索图书完整信息"  id="book-ISBN">
 				   		</div>
 				   		<div class="col-lg-1col-md-1 col-sm-1 col-xs-1">
-				   			<button type="button" class="btn btn-info btn-block"  style="min-width:60px;margin-top:15px;margin-left:-20px" onclick="javascript:search_book();">搜</button>
+				   			<button type="button" id="searchbook" class="btn btn-info btn-block"  style="min-width:60px;margin-top:15px;margin-left:-20px" onclick="javascript:search_book();">搜</button>
 				   		</div>
 			   		</div>
 			   		
@@ -147,7 +207,7 @@ function search_book(){
 					   		</div>
 					   	</div>
 					    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-				   			<button type="button" class="btn btn-info btn-block"  style="min-width:160px;max-width:200px;margin-bottom:10px;">确定添加</button>
+				   			<button type="button" id="newbook" class="btn btn-info btn-block"  style="min-width:160px;max-width:200px;margin-bottom:10px;">确定添加</button>
 				   		</div>
 			   		</div>
 
@@ -161,7 +221,7 @@ function search_book(){
 				   			<label for="inputPassword" class="control-label title">价格</label>
 				   		</div>
 				    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
-				      		<input type="text" class="form-control" placeholder="出售价格">
+				      		<input type="text" id="price" class="form-control" placeholder="出售价格">
 				   		</div>
 				   	</div>
 				   	<div class="row">
@@ -176,7 +236,7 @@ function search_book(){
 					   			<label for="inputPassword" class="control-label title">自定义描述</label>
 					   		</div>
 					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
-					      		<input type="text" class="form-control" placeholder="自定义描述">
+					      		<input type="text" id="describe"class="form-control" placeholder="自定义描述">
 					   		</div>
 					   	</div>
 					   	<div class="row">
@@ -184,7 +244,7 @@ function search_book(){
 					   			<label for="inputPassword" class="control-label title">适用学校</label>
 					   		</div>
 					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
-					      		<input type="text" class="form-control" placeholder="适用学校">
+					      		<input type="text" id="college" class="form-control" placeholder="适用学校">
 					   		</div>
 					   	</div>
 						<!-- <div class="sb-container">
@@ -203,7 +263,7 @@ function search_book(){
 				   			<label for="inputPassword" class="control-label title">交易地点</label>
 				   		</div>
 				    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
-				      		<input type="text" class="form-control" placeholder="交易地点">
+				      		<input type="text" id="place" class="form-control" placeholder="交易地点">
 				   		</div>
 				   	</div>
 				    <div class="row">
@@ -211,12 +271,12 @@ function search_book(){
 				   			<label for="inputPassword" class="control-label title">联系方式</label>
 				   		</div>
 				    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
-				      		<input type="text" class="form-control" placeholder="联系方式">
+				      		<input type="text" id="contact" class="form-control" placeholder="联系方式">
 				   		</div>
 				   	</div>
 				   	<div class="row">
 				   		<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-				   			<button type="button" class="btn btn-info btn-block"  style="min-width:160px;max-width:200px;margin-bottom:10px;">发布</button>
+				   			<button type="button" id="submit" class="btn btn-info btn-block"  style="min-width:160px;max-width:200px;margin-bottom:10px;">发布</button>
 				   		</div>
 			   		</div>
 				</div>

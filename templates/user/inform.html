@@ -5,7 +5,7 @@ require(['model/User'], function(mUser) {
 	var muser = new mUser;
 	muser.getFromSession();
 	var fm = $("#userinfoform");
-	fm.find("[type=button]").click(function(){
+	fm.find("#submit").click(function(){
 		var f = $("#userinfoform");
 		$.ajax({ url: "http://api.jige.olege.com/user", 
 			type : "PUT",
@@ -130,7 +130,7 @@ require(['model/User'], function(mUser) {
 				</div>
 
 				<div id = "ibutton">
-				   <button type="button" class="btn btn-primary" style = " min-width : 120px;">
+				   <button type="button" id="submit" class="btn btn-primary" style = " min-width : 120px;">
      				 保存
    					</button>
    					   <button type="button" class="btn btn-primary" style = " min-width : 120px;">
