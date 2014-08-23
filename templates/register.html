@@ -150,8 +150,8 @@ require(['god/Form'], function(Form){
 					url: '/session.php',
 					type: 'post',
 					data: {
-						email: $("#regemail").val(),
-						password: $("#passwd").val(),
+						action: 'set',
+						data: d.data,
 					},
 					success: function(){
 						location.href = '/user/firstlogin';

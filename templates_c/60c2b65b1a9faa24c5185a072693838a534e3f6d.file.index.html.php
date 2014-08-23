@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 07:13:21
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 08:45:25
          compiled from "templates/sb/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:78351328653e59a8a3d9049-21036637%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '60c2b65b1a9faa24c5185a072693838a534e3f6d' => 
     array (
       0 => 'templates/sb/index.html',
-      1 => 1408749199,
+      1 => 1408754723,
       2 => 'file',
     ),
     'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1408743968,
+      1 => 1408754175,
       2 => 'file',
     ),
   ),
@@ -270,9 +270,9 @@ function search_book(){
 					      		<input type="text" class="form-control" placeholder="适用学校">
 					   		</div>
 					   	</div>
-						<div class="sb-container">
+						<!-- <div class="sb-container">
 							<a id="addpic"><img src="/static/images/pic.jpg"></a>
-						</div>
+						</div> -->
 				   	</div>
 
 					<div class="row">

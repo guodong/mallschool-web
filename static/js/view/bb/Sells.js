@@ -50,7 +50,8 @@ define([ 'backbone', 'text!tpl/favorite.html', 'collection/Sells',
 						q : str
 					}),
 					async : false
-				})
+				});
+				$(".init").animate({marginTop: '20px', marginBottom: '30px'})
 			});
 
 		}
