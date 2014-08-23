@@ -1,27 +1,29 @@
-﻿{!extends file='layout.html'!}
-{!block name=main!}
+﻿{!extends file='layout.html'!} {!block name=main!}
 <script type="text/javascript">
-require(['view/bb/Sells'], function(vSells){
-	var sls = new vSells();
-})
+	require([ 'view/bb/Sells' ], function(vSells) {
+		var sls = new vSells();
+	})
 </script>
 <div class="row">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12">
-		<div class="row" style="margin-top:20px;">
+	<div
+		class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12">
+		<div class="row" style="margin-top: 20px;">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="寻找书籍"  id="bookISBN">
-							<a class="input-group-addon"> <span
+							<input type="text" class="form-control" placeholder="寻找书籍"
+								id="bookISBN"> <a class="input-group-addon"> <span
 								class="glyphicon glyphicon-search" id="searchBook"></span>
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-top: 5px;">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"
+						style="margin-top: 5px;">
 						<input type="checkbox">只看二手书
 					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-top: 5px;">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"
+						style="margin-top: 5px;">
 						<input type="checkbox">只看认证学生
 					</div>
 				</div>
@@ -30,33 +32,19 @@ require(['view/bb/Sells'], function(vSells){
 
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" id="book-list0">
-				
+
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" id="book-list1">
-				
+
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" id="book-list2">
-				
+
 			</div>
-			
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6"  id="book-list3">
-				
+
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" id="book-list3">
+
 			</div>
 		</div>
 	</div>
 </div>
-<script>
-$(function(){
-	$(".collect").click(function(){
-		$.ajax({
-			url: API_URL+'/user/favorite',
-			type: 'post',
-			data: {user_id: '123456789012345678901234', sell_id: $(this).attr("sell_id")},
-			success: function(d){
-				alert('收藏成功');
-			}
-		})
-	})
-})
-</script>
 {!/block!}

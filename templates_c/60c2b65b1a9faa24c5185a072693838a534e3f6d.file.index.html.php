@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-09 11:50:34
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 07:13:21
          compiled from "templates/sb/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:78351328653e59a8a3d9049-21036637%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '60c2b65b1a9faa24c5185a072693838a534e3f6d' => 
     array (
       0 => 'templates/sb/index.html',
-      1 => 1407554866,
+      1 => 1408749199,
       2 => 'file',
     ),
     'e6fc741ff98471f0e5998f4a7fc1b038f422201a' => 
     array (
       0 => 'templates/layout.html',
-      1 => 1407132197,
+      1 => 1408441500,
+      2 => 'file',
+    ),
+    'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
+    array (
+      0 => 'templates/base.html',
+      1 => 1408743968,
       2 => 'file',
     ),
   ),
@@ -21,135 +27,311 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
   'unifunc' => 'content_53e59a8a4174c1_36012143',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_53e59a8a4174c1_36012143')) {function content_53e59a8a4174c1_36012143($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-cn" ng-app>
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="SHORTCUT ICON" href="/static/images/ico/favicon.ico">
 <title>喵校园</title>
 
 <!-- Bootstrap -->
 <link
 	href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css"
 	rel="stylesheet">
+<link href="/static/css/lib.css" rel="stylesheet">
 <link href="/static/css/main.css" rel="stylesheet">
 
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+<script data-main="/static/js/main" src="/static/js/require.js"></script>
+<script>
+	var API_URL = 'http://api.jige.olege.com';
+	//var API_URL = 'http://api.jige.la.me';
+	var UID = "53ca235ebadeb80e03d63af1";
+require(['view/Top'], function(vTop){
+	var vt = new vTop();
+/* 	var user = new mUser();
+	user.getFromSession();
+	window.user = user;
+	window.UID = user.get("id");
+	if(user.get("id")){
+		
+	} */
+})
+</script>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row" style="background-color: #6699ff">
-			<img src="/static/images/nav1.jpg" alt="..." class="img-rounded"
-				style="height: 40px; margin-left: 40px; float: left" /> <a
-				href="register.html" target="_top"><img src="/static/images/nav3.jpg"
-				alt="..." class="img-rounded"
-				style="height: 40px; margin-right: 40px; float: right" /></a> <a
-				href="index-2.html" target="_top"><img src="/static/images/nav2.jpg"
-				alt="..." class="img-rounded"
-				style="height: 40px; margin-right: 10px; float: right" /></a>
-		</div>
-		
-<div class="">
-<form  method="post">
-	<div class="sb-container">
-	<dl class="sb-book-info"> 
-	<dt>书名: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd>
-	<dt>作者: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>出版社: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>ISBN:</dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	</dl>
-	</div>
-	<div class="sb-container">
-	<dl class="sb-book-info"> 
-	<dt>联系方式: </dt> 
-	<dd><span>认证用户可见</span></dd>
-	<dt>地址: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>手机号: </dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	<dt>价格:</dt> 
-	<dd><input class="r3" type="text" name="unick" style="border-style: none;"></dd> 
-	</dl>
-	</div>
-	<div class="sb-container">
-	<dl class="sb-book-info2"> 
-	<dt style="color:#ff6aa2; width:100%;">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 </dt> 
 
-	<dt>用户自定义描述: </dt> 
-	<dd><textarea rows="3" cols="87" style="border-style: none;"></textarea></dd> 
-	<dt>适用于学校选项: </dt> 
-	<dd><select name="" id="">   
-        <option value="1">同济大学</option>   
-        <option value="2">复旦大学</option>   
-        <option value="3">上海大学</option>   
-        <option value="4">上海交通大学</option>              
-      </select>  </dd> 
-	</dl>
-	</div>
-	<div class="sb-container">
-	<img src="/static/images/pic.jpg">
-	</div>
-	<div class="sb-container" style="height:62px;">
-	<span style="float:right;color:#77CEFF;font-weight: bold;">二手书</span><input type="checkbox" name="book" value="" checked style="float:right; margin-right:10px;">
-	<input type="submit" name="Submit" value="发布" style="background-color:#77CEFF; float:right;color:#FFFFFF;width:100px;margin-right:20px;">
+	<div class="top">
+		
 	</div>
 	
-</form>
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+			
+<script type="text/javascript">
+$(function(){
+	document.getElementById('bookinfo').style.display = "none";
+	document.getElementById('addbook').style.display = "none";
+	document.getElementById('bookdetali').style.display = "none";
+});
+
+function show_bookdetail(){
+	if ($("#bookdetali").css("display") == "none") {
+        $("#bookdetali").css("display", "inline");
+        $("#detail-status").html('<span  class="glyphicon glyphicon-chevron-up"></span>收缩详细页面');
+    } else {
+        $("#bookdetali").css("display", "none");
+        $("#detail-status").html('<span  class="glyphicon glyphicon-chevron-down"></span>展开详细页面');
+    }
+
+}
+function search_book(){
+	var reg=/^\d{13}|\d{10}$/;
+	if(reg.test($("#book-ISBN").val())){
+		
+		$.ajax({ url: "http://api.jige.olege.com/book", 
+		    type : "get", 
+		    data: {q:$("#book-ISBN").val(),type:"ISBN"},
+		    dataType : "json",
+		    success: function(d){
+		    	if(d.result == 0){
+		    		document.getElementById('bookinfo').style.display = "";
+		    		document.getElementById('addbook').style.display = "none";
+			    	$("#book-name").text("书名："+d.data.name); 
+			    	$("#book-author").text("作者："+d.data.author);
+			    	$("#book-press").text("出版社："+d.data.press);
+			    	$("#book-p").text("定价："+d.data.fixedPrice);
+			    	$("#book-isbn2").text("ISBN："+d.data.isbn);
+		    	}
+		    },
+			error:function(){
+				document.getElementById('bookinfo').style.display = "none";
+				document.getElementById('addbook').style.display = "";
+			}
+		}); 
+	}
+	else{
+		alert("isbn号不正确");
+	}
+}
+
+</script>
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12  userinfobox">
+		<div id="userinfo">
+			<img alt="头像" src="/static/images/head.jpg" width="100px">
+			<span style="font-family:Microsoft YaHei ;margin-left:20px;">往事深处少年蓝</span>	
+		</div>
+	</div>
 </div>
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
-   aria-labelledby="myModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-      <div class="modal-content">
-         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" 
-               aria-hidden="true">×
-            </button>
-            <h4 class="modal-title" id="myModalLabel">
-             请先登陆（登陆是一种态度）
-            </h4>
-         </div>
-         <div class="modal-body" style="text-align: center">
-            <div><span>账号：</span><input type="text" name="" style="margin-bottom:5px;"></div>
-            <div><span>密码：</span><input type="password" name="" ></div>
-         </div>
-         <div class="modal-footer">
-            <input type="submit" name="" >
-            <a> 忘记密码</a>
-            <a> 新用户注册</a>
-         </div>
-      </div><!-- /.modal-content -->
-   </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-10 col-sm-offset-1 col-xs-12 ">
+		<div class="row">
+			<form id="userinfoform" >
+				<div class="form-group userinfobox" style="padding-top: 10px">
+					<div class="row">
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 stepbox" >
+							<a class="steptext">STEP1:选择图书信息</a>
+						</div>
+					</div>
+			   		<div class="row">
+				   		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+				   			<label class="control-label title">ISBN</label>
+				   		</div>
+				    	<div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+				      		<input type="text" class="form-control" placeholder="填写ISBN，搜索图书完整信息"  id="book-ISBN">
+				   		</div>
+				   		<div class="col-lg-1col-md-1 col-sm-1 col-xs-1">
+				   			<button type="button" class="btn btn-info btn-block"  style="min-width:60px;margin-top:15px;margin-left:-20px" onclick="javascript:search_book();">搜</button>
+				   		</div>
+			   		</div>
+			   		
+			   		<div class="row" id="bookinfo">
+			   			<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
+			   				<img style="height:300px"/>
+			   			</div>
+			   			<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
+				   			<label class="control-label" id="book-name">书名</label>
+				   		</div>
+				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
+				   			<label class="control-label" id="book-author">作者</label>
+				   		</div>
+				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
+				   			<label class="control-label" id="book-press">出版社</label>
+				   		</div>
+				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
+				   			<label class="control-label" id="book-p">定价</label>
+				   		</div>
+				   		<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-6 col-sm-offet-0 col-xs-10 col-xs-offset-1">
+				   			<label class="control-label" id="book-isbn2">ISBN</label>
+				   		</div>
+			   		</div>
+			   		
+			   		<div class="row" id="addbook">
+				   		<div class="row">
+				   			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+				   				<label class="bookdetalitext">您要出售的图书太特别了，我们还没有这本书的信息，请帮我们补全吧</label>
+				   			</div>
+				   		</div>
+			   			<div class="row">
+					   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					   			<label for="inputPassword" class="control-label title">书名</label>
+					   		</div>
+					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					      		<input type="text" class="form-control" placeholder="书名">
+					   		</div>
+				   		</div>
+				   		<div class="row">
+					   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					   			<label for="inputPassword" class="control-label title">作者</label>
+					   		</div>
+					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					      		<input type="text" class="form-control" placeholder="作者">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					   			<label for="inputPassword" class="control-label title">出版社</label>
+					   		</div>
+					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					      		<input type="text" class="form-control" placeholder="出版社">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					   			<label for="inputPassword" class="control-label title">定价</label>
+					   		</div>
+					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					      		<input type="text" class="form-control" placeholder="定价">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					   			<label for="inputPassword" class="control-label title">ISBN</label>
+					   		</div>
+					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					      		<input type="text" class="form-control" placeholder="ISBN">
+					   		</div>
+					   	</div>
+					    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+				   			<button type="button" class="btn btn-info btn-block"  style="min-width:160px;max-width:200px;margin-bottom:10px;">确定添加</button>
+				   		</div>
+			   		</div>
+
+			   		<div class="row">
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 stepbox" >
+							<a class="steptext">STEP2:填写交易信息</a>
+						</div>
+					</div>
+					<div class="row">
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+				   			<label for="inputPassword" class="control-label title">价格</label>
+				   		</div>
+				    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+				      		<input type="text" class="form-control" placeholder="出售价格">
+				   		</div>
+				   	</div>
+				   	<div class="row">
+					   	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 " style="margin-bottom:10px;">
+					   		<label class="bookdetalitext">信息填写得越完整越利于出售，我们将信息完整程度作为排名规则之一 <a href="javascript:show_bookdetail();" id="detail-status"><span  class="glyphicon glyphicon-chevron-down"></span>展开详细页面</a></label>
+					   	</div>
+				   	</div>
+				   	<div id="bookdetali">
+					   	
+					   	<div class="row">
+					   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+					   			<label for="inputPassword" class="control-label title">自定义描述</label>
+					   		</div>
+					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+					      		<input type="text" class="form-control" placeholder="自定义描述">
+					   		</div>
+					   	</div>
+					   	<div class="row">
+					   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+					   			<label for="inputPassword" class="control-label title">适用学校</label>
+					   		</div>
+					    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+					      		<input type="text" class="form-control" placeholder="适用学校">
+					   		</div>
+					   	</div>
+						<div class="sb-container">
+							<a id="addpic"><img src="/static/images/pic.jpg"></a>
+						</div>
+				   	</div>
+
+					<div class="row">
+				   		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 stepbox" >
+							<a class="steptext">STEP3:确认联系信息</a>
+						</div>
+					</div>
+					
+					<div class="row">
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+				   			<label for="inputPassword" class="control-label title">交易地点</label>
+				   		</div>
+				    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+				      		<input type="text" class="form-control" placeholder="交易地点">
+				   		</div>
+				   	</div>
+				    <div class="row">
+				   		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+				   			<label for="inputPassword" class="control-label title">联系方式</label>
+				   		</div>
+				    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+				      		<input type="text" class="form-control" placeholder="联系方式">
+				   		</div>
+				   	</div>
+				   	<div class="row">
+				   		<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+				   			<button type="button" class="btn btn-info btn-block"  style="min-width:160px;max-width:200px;margin-bottom:10px;">发布</button>
+				   		</div>
+			   		</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<form id="upform" class="dpn" enctype="multipart/form-data" method="post" action="http://api.jige.olege.com/pic" target="upf">
+<input type="file" id="fileselect" name="pic">
+</form>
+<iframe name="upf" class="dpn"></iframe>
 <script>
-   $(function () { $('#myModal').modal({
-	   keyboard: true
-   })});
+$(function(){
+	$("#fileselect").change(function(){
+		if($(this).val()){
+			$("#upform").submit();
+		}
+		$(this).val("");
+	});
+	$("#addpic").click(function(){
+		$("#fileselect").click();
+	})
+})
+function loadfile(f){
+	$("#addpic img").src = '/static/uploads/'+f;
+}
 </script>
 
+		</div>
 	</div>
+</div>
+
+
 </body>
 </html><?php }} ?>

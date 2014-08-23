@@ -188,7 +188,7 @@ function search_book(){
 					   		</div>
 					   	</div>
 						<div class="sb-container">
-							<img src="/static/images/pic.jpg">
+							<a id="addpic"><img src="/static/images/pic.jpg"></a>
 						</div>
 				   	</div>
 
@@ -224,4 +224,24 @@ function search_book(){
 		</div>
 	</div>
 </div>
+<form id="upform" class="dpn" enctype="multipart/form-data" method="post" action="http://api.jige.olege.com/pic" target="upf">
+<input type="file" id="fileselect" name="pic">
+</form>
+<iframe name="upf" class="dpn"></iframe>
+<script>
+$(function(){
+	$("#fileselect").change(function(){
+		if($(this).val()){
+			$("#upform").submit();
+		}
+		$(this).val("");
+	});
+	$("#addpic").click(function(){
+		$("#fileselect").click();
+	})
+})
+function loadfile(f){
+	$("#addpic img").src = '/static/uploads/'+f;
+}
+</script>
 {!/block!}
