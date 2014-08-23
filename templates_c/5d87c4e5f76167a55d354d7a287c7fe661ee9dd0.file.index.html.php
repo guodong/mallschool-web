@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 08:45:25
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 11:35:44
          compiled from "templates/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:72383480353e595b1ce08e7-62371894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6e75044cd41467cac384b8d3185deb0902ab6db' => 
     array (
       0 => 'templates/base.html',
-      1 => 1408754175,
+      1 => 1408756720,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_53e595b1d0ffc3_67876664')) {function content_53e595b1d0ffc3_67876664($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="zh-cn" ng-app>
+<html lang="zh-cn">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -56,13 +56,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	var UID = "53ca235ebadeb80e03d63af1";
 require(['view/Top'], function(vTop){
 	var vt = new vTop();
-/* 	var user = new mUser();
-	user.getFromSession();
-	window.user = user;
-	window.UID = user.get("id");
-	if(user.get("id")){
-		
-	} */
 })
 </script>
 </head>

@@ -4,6 +4,7 @@ define([ 'backbone' ], function(Backbone) {
 		defaults : {
 			id : "",
 			name : "",
+			imgpath: ""
 		},
 		parse: function(d){
 			if(d.result != undefined && d.data != undefined)
